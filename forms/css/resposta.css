@@ -1,0 +1,31 @@
+/* Media query */
+@media screen and (min-width: 900px) {
+    article {
+      padding: 1rem 3rem;
+    }
+  }
+  
+  /* Nested media query */
+  @supports (display: flex) {
+    @media screen and (min-width: 900px) {
+      article {
+        display: flex;
+      }
+    }
+  }
+#err_resposta{
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    align-items: center;
+    text-align: center;
+    background-color: darkgrey;
+}
+#acc_resposta{
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(126, 177, 219);
+}

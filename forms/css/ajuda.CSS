@@ -1,0 +1,114 @@
+@media (min-width: 1366px) {
+    .container-fluid{
+        max-width: 1366px;
+    }
+}
+@media (min-height: 768px) {
+    .container-fluid{
+        max-height: fit-content;
+    }
+}
+/*##################################################################################*/
+/*############### Configurações das tables de Banco de Dados #######################*/
+/*##################################################################################*/
+
+/*###################### Personalizando Menu Superior ###################*/
+.tela{
+    background-color: grey;
+}
+.menuSuperior{/*TEM*/
+    width: 100%;
+    border-bottom: 2px solid black;
+    padding: 5px;
+    background-color: #2a6f97;
+}
+
+#t2Ajuda{
+    padding-left: 430px;
+    padding-right: 430px;
+}
+.botao{
+    left: 20px;
+    top: 3px;
+    border-radius: 25%;
+    cursor: pointer;
+}
+.botao:hover{
+    border: 1px solid #2c4792;
+}
+
+#titleBarSub{/*TEM*/
+    position: fixed relative;
+    width: 100%;
+    text-align: center;
+    background-color: cadetblue;
+    font-weight: bold;
+}
+
+/*#####  Configurações do corpo da página #####*/
+.container-fluid #PDF-VIDEO .PV{
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-top: -5px;
+}
+
+.container-fluid #PDF-VIDEO .PV #pdf{
+    width: 660px;
+    height: 60px;
+    padding: 5px;
+}
+.container-fluid #PDF-VIDEO .PV #separador{
+    width: 17px;
+    height: 60px;
+}
+.container-fluid #PDF-VIDEO .PV #video{
+    width: 660px;
+    height: 60px;
+    padding: 5px;
+}
+
+.container-fluid #PDF-VIDEO{
+    max-width: 100%;
+    max-height: fit-content;
+    margin-top: 10px;
+    margin-bottom: 10px;    
+}
+
+.container-fluid #PESGUNTAS{
+    max-width: 100%;
+    max-height: fit-content;
+    margin-bottom: 15px;
+}
+
+.container-fluid #SUPORTE{
+    max-width: 100%;
+    max-height: fit-content;
+}
+.card{  
+    background-color: white;
+    font-weight: bold;
+    font-size: large;
+}
+#titulo{
+    align-items: center;
+    width: 100%;
+    background-color: cadetblue;
+}
+#pdfCard{
+    align-items: center;
+    background-color: rgb(186, 189, 189);
+}
+#videoCard{
+    align-items: center;
+    background-color: rgb(186, 189, 189);
+}
+#perguntasCard{
+    align-items: center;
+    width: 100%;
+    background-color: rgb(186, 189, 189);
+}
+#suporteCard{
+    align-items: center;
+    width: 100%;
+    background-color: rgb(186, 189, 189);
+}

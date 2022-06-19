@@ -1,0 +1,12 @@
+código das cores dos forms:
+cinza escuro:415a77
+cinza claro:778da9
+cor de fundo:b7c4c8
+
+código das cores form inicial:
+ciano escuro:103b46
+ciano meio escuro:275e68
+ciano:3e92a3
+ciano claro:55bbc6
+ciano clarinho:80d0db
+cor de fundo:b7c4c8

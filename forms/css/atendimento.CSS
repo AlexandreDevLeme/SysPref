@@ -1,0 +1,173 @@
+@media (min-width: 1366px) {
+    .container-fluid{
+        max-width: 1366px;
+    }
+}
+@media (min-height: 768px) {
+    .container-fluid{
+        max-height: fit-content;
+    }
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+/*##################################################################################*/
+/*############### Configurações das tables de Banco de Dados #######################*/
+/*##################################################################################*/
+
+/*###################### Personalizando Menu Superior ###################*/
+.fundo{
+    background-color: dimgrey;
+}
+.container-fluid .menuSuperior{ /*AJUSTADO*/
+    width: 100%;
+    height: 100px;
+    border-bottom: 2px solid black;
+    padding: 5px;
+    background-color: #2a6f97;
+}
+#t2{
+    padding-left: 210px;
+    padding-right: 210px;
+}
+.botao{
+    left: 20px;
+    top: 3px;
+    border-radius: 25%;
+    cursor: pointer;
+}
+.botao:hover{
+    border: 1px solid #2c4792;
+}
+.lblPerfil{
+    margin-top: -20px;
+    margin-left: 43%;
+    font-weight: bold;
+    color: white;
+}
+/*#################### Ocultando campo ID das tabelas ##############################*/
+.npVision{
+   visibility: hidden;
+}
+/*############# Configuração das TR e Cabeçalho das taleelas #######################*/
+.filtro-box{
+    background-color: #4ba3c3;
+    text-align: center;
+}
+#linhas{
+    text-align: center;
+    margin: 10px;
+}
+/*################# Configurações da table de requerente ###########################*/
+.reqDiv{
+    width: 100%;
+    height: 345px;
+    overflow-y: scroll;
+}
+#tableReq{
+    width: 100%;
+    background-color: #9AD0EC;
+}
+#titleBarReq{
+    position: fixed relative;
+    width: 100%;
+    text-align: center;
+    background-color: #4ba3c3;
+    font-weight: bold;
+}
+.btnBD{
+    max-height: 32px;
+}
+/*############### Configurações da table de imóveis #######################*/
+.imovDiv{
+    width: 100%;
+    height: 200px;
+    overflow-y: scroll;
+}
+#tableImov{
+    width: 100%;
+}
+#titleBarImov{
+    position: fixed static;
+    width: 100%;
+    text-align: center;
+    background-color: cadetblue;
+    font-weight: bold;
+}
+.btnBD{
+    max-height: 32px;
+}
+.check-filtro{
+    min-height: 35px;
+    padding-top: 5px;
+    padding-left: 10px;
+    background-color: #4ba3c3;
+    border-bottom: 2px solid black;
+}
+.filtro{
+    min-height: 35px;
+    padding-top: 5px;
+    padding-left: 10px;
+    background-color: #7b93d6;
+}
+.f0{
+    margin-left: 15px;
+}
+.f1{
+    margin-right: 13px;
+}
+.f2{
+    margin-right: 320px;
+}
+.f3{
+    margin-left: 50px;
+    margin-right: 117px;
+}
+.f4{
+    margin-right: 25px;
+}
+.f5{
+    margin-right: 30px;
+}
+.f6{
+    margin-right: 5px;
+}
+.f7{
+    margin-right:35px;
+}
+.f8{
+    margin-right: 45px;
+}
+.f9{
+    margin-right: 110px;
+}
+.f10{
+    margin-right: 210px;
+}
+.f11{
+    margin-right: 175px;
+}
+.f12{
+    margin-right: 85px;
+}
+.f13{
+    margin-right: 75px;
+}
+.fillReq{
+    text-align: justify;
+}
+.FillCheck{
+    max-width: 200px;
+    max-height: 30px;
+    margin-left: 450px;
+}
+.txtFill{
+    max-width: 200px;
+    max-height: 30px;
+    margin-right: 5px;
+}
+.buscaFill{
+    max-height: 30px;
+}

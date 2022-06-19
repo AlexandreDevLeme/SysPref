@@ -1,0 +1,422 @@
+@media (min-width: 1366px) {
+    .container-fluid{
+        max-width: 1366px;
+    }
+}
+@media (min-height: 768px) {
+    .container-fluid{
+        max-height: fit-content;
+    }
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+.fundo{
+    background-color:#292e30;
+}
+
+#toggle{/*AJUSTADO*/
+    background-color: rgb(240, 239, 239);
+    font-size: small;
+    text-align: center;
+    height: 32px;
+    margin-top: 212px;
+    margin-left: 12px;
+    width: 90px;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+/*###################### Menu Superior ###################*/
+.container-fluid .menuSuperior{ /*AJUSTADO*/
+    width: 100%;
+    height: 100px;
+    border-bottom: 2px solid black;
+    padding: 5px;
+    background-color: #2a6f97;
+}
+
+#t2{/*AJUSTADO*/
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.botao{/*AJUSTADO*/
+    left: 20px;
+    top: 3px;
+    border-radius: 25%;
+    cursor: pointer;
+}
+.botao:hover{/*AJUSTADO*/
+    border: 1px solid #2c4792;
+}
+.lblPerfil{/*AJUSTADO*/
+    width: 100%;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+.lblPerfilEDT{
+    /*margin-top: 60px;*/
+    width: 100%;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+#t2edt{/*EXCLUSIVO PARA O ARQUIVO EDITAR_REQBD DA ALTERAÇÃO DE DADOS DO REQUERENTE*/
+    padding-left: 358px;
+    padding-right: 358px;
+}
+#t2edti{/*EXCLUSIVO PARA O ARQUIVO EDITAR_IMOVBD DA ALTERAÇÃO DE DADOS DO IMÓVEL*/
+    padding-left: 398px;
+    padding-right: 398px;
+}
+
+/* ###################### Menu oculto #################### */
+.menuOculto{/*AJUSTADO*/
+    position: absolute;
+    background-color: #9AD0EC;
+    width: 350px;
+    height: 110%;
+    left: -380px;
+    transition: left 0.5s;
+    padding: 0;
+}
+.menuOculto .menu{/*AJUSTADO*/
+    color: rgb(12, 12, 12);
+    text-align: center;
+    font-weight: bold;
+    line-height: 35px;
+    font-size: 20px;
+    border-bottom: 2px solid #003049;
+}
+.menuOculto ul{/*AJUSTADO*/
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.menuOculto ul li{/*AJUSTADO*/
+    line-height: 27px;
+    border-bottom: 1px solid #003049;
+}
+.menuOculto ul li a{/*AJUSTADO*/
+    color: rgb(12, 12, 12);
+    text-decoration: none;
+    font-size: 14px;
+    padding-left: 20px;
+    display: block;
+}
+.menuOculto ul li a:hover{/*AJUSTADO*/
+    background-color: #1572A1;
+    transition: 0.5s;
+}
+.menuOculto.exibir{/*AJUSTADO*/
+    left: 0;
+}
+/* ###################### Botão fechar dentro menu oculto #################### */
+.btnfecha{/*AJUSTADO*/
+    position: relative;
+    left: 20px;
+    top: 3px;
+    border: 1px solid white;
+    border-radius: 25%;
+    cursor: pointer;
+}
+.btnfecha:hover{/*AJUSTADO*/
+    border: 1px solid #073b4c;
+}
+/*###################### configurações dos botões do requerente e do imóvel ###################*/
+.grava{
+    font-weight: bolder;
+}
+.apaga{
+    font-weight: bolder;
+}
+.salva{
+    font-weight: bolder;
+}
+.deleta{
+    font-weight: bolder;
+}
+/*###################### REQUERENTE ###################*/
+.pesquisaRequerente{/*AJUSTADO*/
+    max-width: fit-content;
+    margin-left: 530px;
+}
+.reg_requerente{
+    margin-top: 2px;
+    padding: 2px;
+    background-color: #4ba3c3;
+}
+.bar-contrib{
+    height: 30px;
+    background-color: #4ba3c3;
+}
+.campo-req{
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.inp01{
+    width: 100%;
+}
+.retornoBusca{/*AJUSTADO*/
+    max-height: 15px;
+    font-size: 10px;
+    color: white;
+    margin-top: 32px;
+    text-align: center;
+    width: 340px;
+    margin-right: 155px;
+}
+/*Ajustando inputs bootstrap*/
+.i000{
+    max-width: 300px;
+}
+.i2{
+    margin-right: 5px;
+}
+.i3{
+    margin-right: 5px;
+}
+.i4{
+    margin-right: 5px;
+}
+.i6{
+    margin-right: 5px;
+    width: 650px;
+}
+.i7{
+    margin-right: 5px;
+    max-width: 100px;
+}
+.i8{
+    margin-right: 5px;
+    max-width: 300px;
+}
+.titleR{
+    margin-right: 295px;
+}
+.BuscaCEPReq{
+    max-height: 30px;
+}
+.conCPF_txt{
+    max-height: 30px;
+}
+.pesq_cpf{
+    max-width: 245px;
+    min-width: 245px;
+    max-height: 30px;
+    margin-left: 610px;
+    margin-right: 5px;
+}
+.buscaCPF2{
+    margin-left: 860px;
+    max-height: 30px;
+    font-weight: bold;
+}
+
+.edt_id{
+    visibility: hidden;
+}
+.edtI_id{
+    visibility: hidden;
+}
+.btnConsulta{
+    margin-left: 145px;
+}
+.i9{
+    max-width: 150px;
+    max-height: 30px;
+}
+.i10{
+    margin-right: 5px;
+    max-width: 300px;
+}
+.i11{
+    margin-right: 5px;
+    max-width: 200px;
+}
+.input-group{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.input-group-text{
+    margin-bottom: 3px;
+}
+.form-control{
+    margin-bottom: 3px;
+}
+.form-select{
+    margin-bottom: 3px;
+}
+/*Ajuste dos botões do requerente*/
+.btn1{
+    width: 100%;
+    margin-top: 5px;
+    padding-left: 436px;
+}
+.btnEditarSelecionado{
+    margin-left: 155px;
+}
+/*###################### IMÓVEL ###################*/
+/* Dados do Imovel */
+.pesquisaImovel{/*AJUSTADO*/
+    max-width: fit-content;
+    margin-left: 455px;
+}
+.reg_imovel{
+    margin-bottom: 2px;
+    margin-top: 2px;
+    padding: 2px;
+    background-color: #2c7da0;
+}
+.bar-imovel{    
+    width: 100%;
+    height: 30px;
+    background-color: #2c7da0;
+}
+.campo-im{
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+/*Ajustando inputs bootstrap*/
+.i12{
+    margin-right: 5px;
+}
+.i13{
+    max-width: 100px;
+    margin-right: 5px;
+}
+.i14{
+    max-width: 400px;
+    margin-right: 5px;
+}
+.i15{
+    max-width: 200px;
+}
+.i16{
+    max-width: 300px;
+}
+.i19{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.btn2{
+    width: 100%;
+    margin-top: 5px;
+    padding-left: 470px;
+}
+.i17{
+    margin-right: 5px;
+}
+.i20{
+    max-width: 150px;
+}
+
+.titleI{
+    margin-right: 315px;
+}
+.retornoBuscaI{
+    max-height: 15px;
+    font-size: 10px;
+    color: white;
+    margin-top: 32px;
+    text-align: center;
+    width: 340px;
+    margin-right: 155px;
+}
+.btnConsultaI{
+    margin-left: 230px;
+}
+.conCAD_txt{
+    max-height: 30px;
+}
+.buscaCEP2{
+    max-height: 30px;
+}
+.pesq_cad{
+    max-width: 200px;
+    max-height: 30px;
+    margin-right: 5px;
+}
+.buscaCAD2{
+    max-height: 30px;
+    font-weight: bold;
+}
+.i18{
+    max-width: 150px;
+    max-height: 30px;
+}
+/*##################################################################################*/
+/*############### Configurações das tables de Banco de Dados #######################*/
+/*##################################################################################*/
+
+/*#################### Ocultando campo ID das tabelas ##############################*/
+.npVision{
+   visibility: hidden;
+}
+/*############# Configuração das TR e Cabeçalho das taleelas #######################*/
+#cabecalho{
+    background-color: #61a5c2;
+    text-align: center;
+}
+#linhas{
+    text-align: center;
+    margin: 10px;
+}
+/*################# Configurações da table de requerente ###########################*/
+.reqDiv{
+    width: 100%;
+    height: 200px;
+    overflow-y: scroll;
+}
+#tableReq{
+    width: 100%;
+}
+#titleBarReq{
+    position: fixed relative;
+    width: 100%;
+    text-align: center;
+    background-color: #89c2d9;
+    font-weight: bold;
+}
+.btnBD{
+    max-height: 32px;
+}
+/*############### Configurações da table de imóveis #######################*/
+.imovDiv{
+    width: 100%;
+    height: 200px;
+    overflow-y: scroll;
+}
+#tableImov{
+    width: 100%;
+}
+#titleBarImov{
+    position: fixed static;
+    width: 100%;
+    text-align: center;
+    background-color: #89c2d9;
+    font-weight: bold;
+}
+.btnBD{
+    max-height: 32px;
+}
+/*###############PERSONALIZANDO MENSAGENS DE ERRO*/
+#err_resposta{
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    align-items: center;
+    text-align: center;
+    background-color: darkgrey;
+}

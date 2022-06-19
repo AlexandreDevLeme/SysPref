@@ -1,0 +1,94 @@
+
+@media (min-width: 1366px) {
+    .container-fluid{
+        max-width: 1366px;
+    }
+}
+@media (min-height: 768px) {
+    .container-fluid{
+        max-height: 100%;
+    }
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.vh-100{
+    background-image: url(../img/transparent-brasao_50.png);
+}
+.card{
+    width: 800px;
+    height: 560px;
+}
+
+#clonuna-A{
+    align-items: center;
+    max-height: 400px;
+}
+
+.row #clonuna-A img{
+    margin-top: 15%;
+}
+
+#d-flex{
+    width:max-content;
+    margin-top: 2%;
+    align-self: center;
+}
+
+.row #clonuna-A .h5{
+    margin-left: 10px;
+    text-align: center;
+}
+
+.card-body{
+    max-height: 450px;
+}
+
+.col-lg-5{
+    align-content: center;
+}
+
+.col-lg-7{
+    max-height: 450px;
+}
+
+#statusBD{
+    width: fit-content;
+    height: fit-content;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: white;
+}
+
+.st-server{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#createStatus{
+    width: 100%;
+    margin-left: 0px;
+    max-height: fit-content;
+    text-align: center;
+}
+/*######################################################*/
+/*########## TRATANDO MSGs DE ERRO E SUSSESSO ##########*/
+/*######################################################*/
+#err_resposta{
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    align-items: center;
+    text-align: center;
+    background-color: darkgrey;
+}
+#acc_resposta{
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(126, 177, 219);
+}

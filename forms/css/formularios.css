@@ -1,0 +1,920 @@
+@media (min-width: 1366px) {
+    .container-fluid{
+        max-width: 1366px;
+    }
+}
+@media (min-height: 768px) {
+    .container-fluid{
+        max-height: fit-content;
+    }
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/*################### BACKGROUND-COLOR DAS CAMADAS D TODOS OS FORMULÁRIOS ###############################*/
+    .fundo{
+        background-color:#292e30;
+    }
+    .background1{
+        
+        background-color: #415a77;
+    }
+    .background2{
+        
+        background-color: #778da9;
+    }
+    .background3{
+        
+        background-color:#415a77;
+    }
+/*###################### Botão voltar ####################*/
+    .botaoVoltar{
+        border-radius: 25%;
+        cursor: pointer;
+    }
+    #toggle{/*AJUSTADO*/
+        background-color: rgb(240, 239, 239);
+        font-size: small;
+        text-align: center;
+        height: 32px;
+        margin-top: 212px;
+        margin-left: 12px;
+        width: 90px;
+        padding-top: 5px;
+        cursor: pointer;
+    }
+    #npVision{
+        visibility: hidden;
+     }
+    /*###################### Menu Superior ###################*/
+    .container-fluid .menuSuperior{ /*AJUSTADO*/
+        width: 100%;
+        height: 100px;
+        border-bottom: 2px solid black;
+        padding: 5px;
+        background-color: #2a6f97;
+    }
+
+    /*##### Label que informa o perfil logado #####*/
+    .lblPerfil{
+        width: 100%;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+    }
+    /*### Configurações do titulo dos formularios ###*/
+    #t2Rev{
+        padding-left: 290px;
+        padding-right: 290px;
+    }
+    #t2Copia{
+        padding-left: 190px;
+        padding-right: 190px;
+    }
+    #t2RCopia{
+        padding-left: 140px;
+        padding-right: 140px;
+    }
+    #t2Conf{
+        padding-left: 290px;
+        padding-right: 290px;
+    }
+    #t2Vv{
+        padding-left: 310px;
+        padding-right: 310px;
+    }
+    #t2Unif{
+        padding-left: 320px;
+        padding-right: 320px;
+    }
+    #t2Desd{
+        padding-left: 225px;
+        padding-right: 225px;
+    }
+    #t2Mloco{
+        padding-left: 280px;
+        padding-right: 280px;
+    }
+    #t2Ladoim{
+        padding-left: 285px;
+        padding-right: 285px;
+    }
+    #t2FichaC{
+        padding-left: 275px;
+        padding-right: 275px;
+    }
+    #t2Emp{
+        padding-left: 285px;
+        padding-right: 285px;
+    }
+    #t2Dem{
+        padding-left: 320px;
+        padding-right: 320px;
+    }
+    #t2DenoR{
+        padding-left: 254px;
+        padding-right: 254px;
+    }
+    #t2Habit{
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+    #t2Canc{
+        padding-left: 215px;
+        padding-right: 215px;
+    }
+    #t2BuscaI{
+        padding-left: 290px;
+        padding-right: 290px;
+    }
+    #t2Bci{
+        padding-left: 90px;
+        padding-right: 90px;
+    }
+    #t2AtuCad{
+        padding-left: 155px;
+        padding-right: 155px;
+    }
+    #t2Ampl{
+        padding-left: 320px;
+        padding-right: 320px;
+    }
+    .cbi{
+        font-size: larger;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+/*###################### REQUERENTE ###################*/
+    .reg_requerente{
+        width: 100%;
+        margin-top: 2px;
+        padding: 2px;
+    }
+    .busca_requerente{
+        width: 100%;
+    }
+    /*Ajustando inputs bootstrap*/
+    .i000{
+        max-width: 300px;
+    }.i2{
+        margin-right: 5px;
+    }
+    .i3{
+        margin-right: 5px;
+    }
+    .i4{
+        margin-right: 5px;
+    }
+    .i6{
+        margin-right: 5px;
+        width: 650px;
+    }
+    .i7{
+        margin-right: 5px;
+        max-width: 100px;
+    }
+    .i8{
+        max-width: 300px;
+        margin-right: 5px;
+    }
+    .titleR{
+        margin-right: 560px;
+    }
+    /*#### pesquisar requerentes ###*/
+    .conCPF_txt{
+        max-height: 30px;
+    }
+    .pesq_cpf{
+        max-width: 200px;
+        max-height: 30px;
+        margin-right: 5px;
+    }
+    .buscaCPF2{
+        max-height: 30px;
+        font-weight: bold;
+    }
+    .retornoBusca{
+        height: 15px;
+        width: 350px;
+        font-size: 10px;
+        color: white;
+        text-align: center;
+    }
+    .edt_id{
+        visibility: hidden;
+        max-width: 0px;
+        max-height: 0px;
+    }
+    /*##############################*/
+    .i10{
+        margin-right: 5px;
+        max-width: 300px;
+    }
+    .i11{
+        margin-right: 5px;
+        max-width: 200px;
+    }
+    .input-group{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .input-group-text{
+        margin-bottom: 3px;
+    }
+    .form-control{
+        margin-bottom: 3px;
+    }
+    .form-select{
+        margin-bottom: 3px;
+    }
+/*###################### IMÓVEL ###################*/
+    /* Dados do Imovel */
+    .reg_imovel{
+        max-width: 100%;
+        margin-bottom: 2px;
+        padding: 2px;
+    }
+    .busca_imovel{
+        width: 100%;
+    }
+    .inp01{
+        width: 100%;
+        padding-left: 830px;
+    }
+    /*Ajustando inputs bootstrap*/
+    .i12{
+        margin-right: 5px;
+    }
+    .i13{
+        max-width: 100px;
+        margin-right: 5px;
+    }
+    .i14{
+        max-width: 400px;
+        margin-right: 5px;
+    }
+    .i15{
+        max-width: 200px;
+        margin-right: 5px;
+    }
+    .i16{
+        max-width: 300px;
+    }
+    .i19{
+        max-width: 150px;
+        margin-right: 5px;
+    }
+    .i30{
+        max-width: 150px;
+        margin-right: 5px;
+    }
+    .titleI{
+        margin-right: 630px;
+    }
+    .retornoBuscaI{
+        height: 15px;
+        width: 350px;
+        font-size: 10px;
+        color: white;
+        text-align: center;
+    }
+    .conCAD_txt{
+        max-height: 30px;
+    }
+    .pesq_cad{
+        max-width: 200px;
+        max-height: 30px;
+        margin-left: 985px;
+        margin-right: 5px;
+    }
+    .buscaCAD2{
+        margin-left: 0px;
+        max-height: 30px;
+        font-weight: bold;
+    }
+    .edtI_id{
+        visibility: hidden;
+        max-width: 0px;
+        max-height: 0px;
+    }
+/*########################################################################################################################*/
+.title1{
+    width: 100%;
+    height: 15px;
+    padding-left: 825px;
+}
+.title3{
+    width: 100%;
+}
+.txtArea2{
+    width: 100%;
+}
+/*################################# Campos de preenchimento da revisão de IPTU ###########################################*/
+.i00{
+    max-width: 150px;
+    margin-right: 5px; /* edita o espaçamento do campo carnê */
+}
+.dados-revisao{
+    width: 100%;
+    max-height: fit-content;
+    margin-bottom: 2px;
+    padding: 2px;
+}
+/* Dados da Área inserida no carnê e medidas "In Loco" */
+.titu-carne1{
+    margin-right: 10px;
+}
+.iX{
+    max-width: 450px;
+    max-height: 32px;
+    margin-right: 5px;
+}
+/*### BOTÃO DO SELECT DA REVISÃO DE IPTU ###*/
+.contorno{
+    max-width: 80px;
+    max-height: 32px;
+    cursor: pointer;
+    margin-right: 450px;
+}
+/*### DIV DE CRIAÇÃO DOS ITEMS DA REVISÃO DE IPTU ###*/
+#revisao{
+    width: 100%;
+    max-height: 30px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+/*### 1° ITEM DO SELECT DA REVISÃO DE IPTU ###*/
+#revisao .X1{
+    max-height: 30px;
+    max-width: 170px;
+}
+#revisao .X2{
+    max-height: 30px;
+    max-width: 200px;
+    margin-right: 5px;
+}
+#revisao .X3{
+    max-height: 30px;
+    max-width: 200px;
+}
+#revisao .X4{
+    max-height: 30px;
+    max-width: 200px;
+    margin-right: 20px;
+}
+/*### 3° ITEM DO SELECT DA REVISÃO DE IPTU ###*/
+#revisao .X31{
+    max-height: 30px;
+    max-width: 200px;
+}
+#revisao .X32{
+    max-height: 30px;
+    max-width: 270px;
+    margin-right: 5px;
+}
+#revisao .X33{
+    max-height: 30px;
+    max-width: 170px;
+}
+#revisao .X34{
+    max-height: 30px;
+    max-width: 170px;
+    margin-right: 5px;
+}
+#revisao .X35{
+    max-height: 30px;
+    max-width: 170px;
+    margin-right: 5px;
+}
+#revisao .X36{
+    max-height: 30px;
+    max-width: 170px;
+    margin-right: 5px;
+}
+#revisao .X37{
+    max-height: 30px;
+    max-width: 170px;
+    margin-right: 5px;
+}
+#revisao .X38{
+    max-height: 30px;
+    max-width: 170px;
+}/*### 4° ITEM DO SELECT DA REVISÃO DE IPTU ###*/
+#revisao .X42{
+    max-height: 30px;
+    max-width: 200px;
+    margin-right: 5px;
+}
+#revisao .X44{
+    max-height: 30px;
+    max-width: 200px;
+    
+    margin-right: 5px;
+}
+#revisao .X46{
+    max-height: 30px;
+    max-width: 200px;
+}
+/*### 5° ITEM DO SELECT DA REVISÃO DE IPTU ###*/
+#revisao .menu5{
+    color: white;
+}
+/*### 6° ITEM DO SELECT DA REVISÃO DE IPTU ###*/
+#revisao .X61{
+    max-height: 30px;
+    max-width: 200px;
+}
+#revisao .X62{
+    max-height: 30px;
+    max-width: 270px;
+    margin-right: 5px;
+}
+#revisao .X63{
+    max-height: 30px;
+    max-width: 170px;
+}
+#revisao .X64{
+    max-height: 30px;
+    max-width: 170px;
+    margin-right: 5px;
+}
+#revisao .X65{
+    max-height: 30px;
+    max-width: 170px;
+    margin-right: 5px;
+}
+#revisao .X66{
+    max-height: 30px;
+    max-width: 170px;
+    margin-right: 5px;
+}
+#revisao .X67{
+    max-height: 30px;
+    max-width: 170px;
+    margin-right: 5px;
+}
+#revisao .X68{
+    max-height: 30px;
+    max-width: 170px;
+}
+
+.motivo{
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
+}
+.carne{
+    max-width: 150px;
+    margin-right: 5px;
+}
+/*######################################*/
+.s1a{
+    margin-right: 15px;
+}
+.s2{
+    max-width: 150px;
+}
+.s2a{
+    margin-right: 125px;
+}
+.s5{
+    max-width: 75px;
+}
+.s6{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.s7{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.s8{
+    max-width: 150px;
+}
+/*Dados referentes ao Desdobro/Unificação */
+.s9{
+    max-width: 75px;
+    max-height: 30px;
+}
+.s10{
+    max-width: 100px;
+    margin-right: 10px;
+}
+.s11{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.s12{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.s13{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.s14{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.s15{
+    max-width: 150px;
+}
+/*#########################################################################################################*/
+
+#aproData{
+    margin-right: 500px;
+}
+/*################################ Campos da Cópia de Alvará ###########################################*/
+.copy-alvara{
+    width: 100%;
+    max-height: fit-content;
+    margin-bottom: 2px;
+    padding: 2px;
+}
+
+.r1{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.r2{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.r3{
+    max-width: 150px;
+}
+.r4{
+    max-width: 150px;
+    margin-right: 360px;
+}
+/*########################## Configurações do Valor Venal ####################################*/
+.dados-Vv{
+    width: 100%;
+    max-height: fit-content;
+    margin-bottom: 2px;
+    padding: 2px;
+}
+.o1{
+    max-width: 75px;
+    margin-right: 1090px;
+}
+/*############################# Configurações da Certidão de Confrontantes ##################################*/
+.btn-confront{
+    max-width: 100%;
+    max-height: fit-content;
+    margin-bottom: 2px;
+    padding: 2px;
+    padding-left: 1225px;
+}
+/*############################# Configurações da Unificação ##################################*/
+.dados-Unif{
+    max-width: 100%;
+    margin-bottom: 2px;
+    padding: 2px;
+    padding-bottom: 110px;
+}
+#titu3-unif{
+    padding-left: 10px;
+}
+.q3unif{
+    max-width: 150px;
+    margin-right: 510px;
+}
+/*########################## Configurações do Renovação de desdobro ####################################*/
+.dados-desd{
+    width: 100%;
+    max-height: fit-content;
+    margin-bottom: 2px;
+    padding: 2px;
+    padding-bottom: 5px;
+}
+.recuo{
+    margin-left: 20px;
+}
+.q1{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.q2{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.q3desde{
+    max-width: 150px;
+    margin-right: 510px;
+}
+.q4{
+    min-width: 800px;
+    margin-right: 5px;
+}
+.desdeTitu{
+    margin-left: 10px;
+}
+#titu-rdesde{
+    padding-left: 10px;
+}
+/*################################ Campos da Medição/Verificação "In Loco" ###########################################*/
+.dados-mloco{
+    width: 100%;
+    max-height: fit-content;
+    margin-bottom: 2px;
+    padding: 2px;
+    padding-bottom: 5px;
+}
+.titu-mloco{
+    margin-right: 800px;
+}
+/*################################ Campos do Lado do Imóvel ###########################################*/
+.dados-ladoi{
+    width: 100%;
+    max-height: fit-content;
+    margin-bottom: 2px;
+    padding: 2px;
+    padding-bottom: 5px;
+}
+.titu-mladoI{
+    margin-right: 810px;
+}
+/*################################ Campos do Certidão de Ficha Cadastral ###########################################*/
+.dados-fichaC{
+    width: 100%;
+    max-height: fit-content;
+    margin-bottom: 2px;
+    padding: 2px;
+}
+#titu-FC{
+    margin-right: 740px;
+}
+.FC{
+    max-width: fit-content;
+    margin-left: 10px;
+}
+.dados-fichaC .form-floating .txtaddFC{
+    width: 700px;
+}
+/*################################Campos do Emplacamento ###########################################*/
+.dados-emp{
+    max-width: 100%;
+    margin-bottom: 2px;
+    padding: 2px;
+}
+.m1{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.m2{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.m3{
+    max-width: 150px;
+}
+.m4{
+    max-width: 800px;
+}
+.r4b{
+    margin-right: 280px;
+}
+.empchk1{
+    color: white;
+}
+.empchk2{
+    color: white;
+}
+.dados-emp .form-check{
+    max-width: fit-content;
+    margin-left: 10px;
+}
+.form-check-label{
+    width: 100%;
+}
+/*################################ Campos da Denominação de Rua ###########################################*/
+.dados-denoR{
+    width: 100%;
+    max-height: fit-content;
+    padding-left: 1220px;
+    margin-bottom: 2px;
+}
+.ib1{
+    margin-right: 5px;
+}
+.ib2{
+    max-width: 300px;
+}
+.ib3{
+    margin-right: 5px;
+}
+.ib4{
+    max-width: 300px;
+}
+.reg_imovel .form-floating .denrua4{
+    margin-left: 10px;
+    width: 700px;
+}
+/*################################ Campos da Certidão de Demolição ###########################################*/
+.dadosDem{
+    width: 100%;
+    max-height: fit-content;
+    margin-bottom: 2px;
+    padding: 2px;
+}
+.l1{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.l2{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.l3{
+    max-width: 150px;
+}
+.l4{
+    max-width: 800px;
+}
+.r4a{
+    margin-right: 360px;
+}
+/*################################ Campos do Habite-se/Construção ###########################################*/
+.habit{
+    max-width: 100%;
+    margin-bottom: 2px;
+    padding: 2px;
+    padding-bottom: 5px;
+}
+.k1{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.k2{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.k3{
+    max-width: 150px;
+}
+.k3a{
+    margin-right: 420px;
+}
+.k4{
+    min-width: 920px;
+}
+
+.chk1{
+    color: white;
+    margin-right: 650px;
+}
+.chk2{
+    color: white;
+    margin-right: 950px;
+}
+/*################################ Campos do Cancelamento de Alvará ###########################################*/
+.cancAl{
+    width: 100%;
+    max-height: fit-content;
+    margin-bottom: 2px;
+    padding: 2px;
+}
+.cancelamentoAlvara{
+    width: 100%;
+}
+.titu-cancAl{
+    margin-right: 900px;
+}
+.j1{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.j2{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.j3{
+    max-width: 150px;
+}
+/*########################## Configurações da Busca de IPTU ####################################*/
+.buscaIP{
+    width: 100%;
+    max-height: fit-content;
+    margin-bottom: 2px;
+    padding: 2px;
+}
+.f1{
+    max-width: 75px;
+    margin-right: 1090px;
+}
+#divBUSCA{
+    width: 100%;
+}
+/*################################ Campos da Certidão de BCI ###########################################*/
+.dadosBci{
+    width: 100%;
+    max-height: fit-content;
+    margin-bottom: 2px;
+    padding: 2px;
+}
+#buttonBCI{
+    width: 100%;
+    padding-left: 1230px;
+}
+/*###################### campos da Atualização Cadastral ###################*/
+.dadosNPro{
+    width: 100%;
+    max-height: fit-content;
+    margin-top: 2px;
+    padding: 2px;
+}
+/*Ajustando inputs bootstrap*/
+.titleB{
+    margin-right: 625px;
+    margin-bottom: 20px;
+}
+.buscaCEP3{
+    max-height: 30px;
+}
+#buttonPRT{
+    margin-left: 270px;
+}
+.d1{
+    max-height: 30px;
+}
+.d2{
+    margin-right: 5px;
+}
+.d3{
+    margin-right: 5px;
+    max-width: 250px;
+}
+.d4{
+    margin-right: 5px;
+    max-width: 250px;
+}
+.d5{
+    margin-right: 5px;
+    max-width: 850px;
+}
+.d6{
+    max-width: 100px;
+    margin-right: 5px;
+}
+.d7{
+    max-width: 300px;
+}
+.d8{
+    margin-right: 5px;
+    max-width: 300px;
+}
+.d9{
+    margin-right: 5px;
+    max-width: 200px;
+}
+/*###################### campos da Ampliação ###################*/
+.dadosAmpl{
+    max-width: 100%;
+    margin-top: 2px;
+    padding: 2px;
+}
+.titu-ampl{
+    margin-right: 1025px;
+}
+.e1{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.e2{
+    margin-right: 5px;
+    max-width: 150px;
+}
+.e3{
+    max-width: 150px;
+}
+.e3a{
+    margin-right: 5px;
+    max-width: 850px;
+}
+.e4{
+    max-width: 150px;
+}
+.e4a{
+    max-width: 150px;
+    margin-right: 5px;
+}
+.e5{
+    max-width: 150px;
+}
+#y10{
+    max-width: 700px;
+    margin-left: 10px;
+}
+.y11{
+    margin-right: 340px;
+}
+/*###############################################################################*/
+/*################################## GLOBAIS ####################################*/
+.frmName{                                                                   /*###*/
+    visibility: hidden;                                                     /*###*/
+}                                                                           /*###*/
+/*###############################################################################*/

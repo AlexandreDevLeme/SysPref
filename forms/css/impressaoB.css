@@ -1,0 +1,413 @@
+@media print {
+    .NoBT {
+       visibility: hidden;
+    }
+ }
+/*####################################*/
+/*    Ocultando botão de impressão    */
+  @media print
+  {    
+      .NoBT, .NoBT *
+      {
+          display: none !important;
+      }
+  }
+/*####################################*/
+*{
+    padding: 0;
+    margin: 0;
+    font-family: serif;
+    font-weight: 500;
+}
+
+.tela{
+    background-color: grey;
+}
+
+.folha{
+    width: 780px;
+    background-color: white;
+    padding-left: 15px;
+}
+
+.linha-fx{
+    font-weight: 500;
+}
+.varDoc{
+    font-weight: bold;
+}
+.dengue{
+    margin-left: 5px;
+}
+
+.covid{
+    margin-top: -110px;
+    margin-left: 250px;
+}
+
+.identific{
+    margin-left: 500px;
+    font-size: x-small;
+    font-weight: 500;
+    margin-top: 95px;
+}
+.campoDoc{
+    width: 750px;
+    height: 600px;
+    padding: 0px;
+}
+
+.data{
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+.linha{
+    margin-top: -50px;
+    margin-left: 400px;
+    font-weight: 600;
+}
+
+.linhaASS{
+    margin-top: -20px;
+    margin-left: 400px;
+    font-weight: 600;
+}
+
+.ass{
+    margin-left: 490px;
+    font-weight: 600;
+}
+
+.assNCI{
+    width: 750px;
+    margin-left: 0px;
+    font-weight: 600;
+}
+.assNCI .lbl-OBS3{
+    margin-right: 280px;
+    font-weight: bold;
+}
+.doc_print{
+    width: 750px;
+    word-break: break-all;
+}
+.NoBT{
+    margin-top: -40px;
+}
+
+/*      ALINHANDO AS LABELS      */
+/*###############################*/
+/*           Requerente          */
+.lbl-1{
+    width: 640px;
+    margin-top: 24px;
+    margin-left: 25px;
+    text-align: center;
+}
+.lbl-2{
+    width: 310px;
+    margin-top: 48px;
+    margin-left: 55px;
+    text-align: center;
+}
+.lbl-3{
+    width: 330px;
+    margin-top: 48px;
+    margin-left: 419px;
+    text-align: center;
+}
+.lbl-4{
+    width: 656px;
+    margin-top: 72px;
+    margin-left: 90px;
+    text-align: center;
+}
+.lbl-5{
+    width: 265px;
+    margin-top: 96px;
+    margin-left: 62px;
+    text-align: center;
+}
+/*##################################*/
+/*              Imovel              */
+.lbl-6{
+    width: 592px;
+    margin-top: 24px;
+    margin-left: 55px;
+    text-align: center;
+}
+.lbl-7{
+    width: 81px;
+    margin-top: 24px;
+    margin-left: 673px;
+    text-align: center;
+}
+.lbl-8{
+    width: 193px;
+    margin-top: 48px;
+    margin-left: 32px;
+    text-align: center;
+}
+.lbl-9{
+    width: 137px;
+    margin-top: 48px;
+    margin-left: 283px;
+    text-align: center;
+}
+.lbl-10{
+    width: 280px;
+    margin-top: 48px;
+    margin-left: 473px;
+    text-align: center;
+}
+.lbl-11{
+    width: 290px;
+    margin-top: 72px;
+    margin-left: 260px;
+    text-align: center;
+}
+.lbl-12{
+    width: 672px;
+    margin-top: 96px;
+    margin-left: 80px;
+    text-align: center;
+}
+
+/*#############################*/
+/*  Construção e Habite-se     */
+.lbl-18{
+    border: 1px solid black;
+    width: 70px;
+    height: 20px;
+    margin-top: 24px;
+    margin-left: 675px;
+    text-align: center;
+    font-weight: bold;
+}
+.lbl-19{
+    border: 1px solid black;
+    width: 70px;
+    height: 20px;
+    margin-top: 48px;
+    margin-left: 675px;
+    text-align: center;
+    font-weight: bold;
+}
+.lbl-20{
+    width: 130px;
+    margin-top: 72px;
+    margin-left: 122px;
+    text-align: center;
+}
+.lbl-21{
+    width: 155px;
+    margin-top: 72px;
+    margin-left: 318px;
+    text-align: center;
+}
+.lbl-22{
+    width: 145px;
+    margin-top: 72px;
+    margin-left: 573px;
+    text-align: center;
+}
+.campoDoc #obsCampo{
+    width: 750px;
+    word-break: break-all;
+}
+/*#####################################*/
+/*           Ajustes gerais            */
+
+/*####################################*/
+/*    Ajustes do quadro limitador     */
+.campoDoc .cerco{
+    width: 750px;
+    height: 350px;
+}
+/*#####################################*/
+/*       Ajustes do quadro N.F.O       */
+.quadro_nfo{
+    position: absolute;
+    border: 2px solid black;
+    width: 360px;
+    height: 415px;
+    margin-left: 5px;
+    display: inline-block;
+    padding-left: 10px;
+}
+.topo-nfo{
+    text-align: center;
+    font-weight: bold;
+}
+.vistoria{
+    margin-left: 70px;
+}
+.S-nfo{
+    margin-left: 98px;
+    font-size: small;
+    font-weight: bold;
+}
+.N-nfo{
+    margin-left: 20px;
+    font-size: small;
+    font-weight: bold;
+}
+.quadro_nfo .markOPT{
+    font-weight: bold;
+}
+.quadro_nfo .cx-sim{
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    margin-right: 50px;
+    margin-left: 5px;
+}
+.quadro_nfo .nfo-sim{
+    width: 30px;
+    height: 20px;
+    border: 1px solid black;
+    margin-right: 15px;
+}
+.quadro_nfo .cx-nao{
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    margin-left: 5px;
+}
+.quadro_nfo .nfo-nao{
+    width: 30px;
+    height: 20px;
+    border: 1px solid black;
+}
+.quadro_nfo .assNFO{
+    font-size: x-small;
+    font-weight: bolder;
+    text-align: center;
+    margin-right: 15px;
+}
+.pf1{
+    margin-left: 50px;
+}
+.pf2{
+    margin-left: 50px;
+}
+.pf3{
+    margin-left: 52px;
+}
+.pf4{
+    margin-left: 51px;
+}
+.pf5{
+    margin-left: 51px;
+}
+.pf6{
+    margin-left: 47px;
+}
+.pf7{
+    margin-left: 4px;
+}
+.pf8{
+    margin-left: 4px;
+}
+.pf9{
+    margin-left: 6px;
+}
+.pf10{
+    margin-left: 5px;
+}
+.pf11{
+    margin-left: 5px;
+}
+.pf12{
+    margin-left: 1px;
+}
+/*#####################################*/
+/*      Ajustes do quadro saecil       */
+.quadro_saecil{
+    position: absolute;
+    border: 2px solid black;
+    width: 360px;
+    height: 415px;
+    margin-left: 380px;
+    display: inline-block;
+    padding-left: 10px;
+}
+.topo-saecil{
+    text-align: center;
+    font-weight: bold;
+}
+.S-saecil{
+    margin-left: 265px;
+    font-size: small;
+    font-weight: bold;
+}
+.N-saecil{
+    margin-left: 18px;
+    font-size: small;
+    font-weight: bold;
+}
+.quadro_saecil .saecil-sim{
+    width: 30px;
+    height: 20px;
+    border: 1px solid black;
+}
+.quadro_saecil .saecil-nao{
+    width: 30px;
+    height: 20px;
+    border: 1px solid black;
+}
+.quadro_saecil .assSAECIL{
+    font-size: x-small;
+    font-weight: bolder;
+    text-align: center;
+    margin-right: 15px;
+}
+.sc1{
+    margin-left: 46px;
+}
+.sc2{
+    margin-left: 50px;
+}
+.sc3{
+    margin-left: 47px;
+}
+.sc4{
+    margin-left: 51px;
+}
+.sc5{
+    margin-left: 51px;
+}
+.sc6{
+    margin-left: 54px;
+}
+.sc7{
+    margin-left: 52px;
+}
+.sc8{
+    margin-left: 47px;
+}
+.sc9{
+    margin-left: 4px;
+}
+.sc10{
+    margin-left: 8px;
+}
+.sc11{
+    margin-left: 5px;
+}
+.sc12{
+    margin-left: 9px;
+}
+.sc13{
+    margin-left: 9px;
+}
+.sc14{
+    margin-left: 12px;
+}
+.sc15{
+    margin-left: 10px;
+}
+.sc16{
+    margin-left: 5px;
+}

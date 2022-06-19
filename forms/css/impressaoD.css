@@ -1,0 +1,244 @@
+@media print {
+    .NoBT {
+       visibility: hidden;
+    }
+ }
+*{
+    padding: 0;
+    margin: 0;
+    font-family: serif;
+    font-weight: 500;
+}
+
+.tela{
+    background-color: grey;
+}
+
+.folha{
+    width: 780px;
+    background-color: white;
+    padding-left: 15px;
+}
+
+.linha-fx{
+    font-weight: 500;
+}
+.varDoc{
+    font-weight: bold;
+}
+.dengue{
+    margin-left: 5px;
+}
+
+.covid{
+    margin-top: -120px;
+    margin-left: 250px;
+}
+.doc_print{
+    width: 750px;
+    word-break: break-all;
+}
+.linha-fx .CancelOBS{
+    background-color: rgb(252, 249, 239);
+    width: 750px;
+    word-break: break-all;
+    border-radius: 3%;
+}
+.identific{
+    margin-top: -35px;
+    margin-left: 500px;
+    font-size: x-small;
+    font-weight: 600;
+}
+.campoDoc{
+    width: 750px;
+    height: 200px;
+}
+.campoDocDR{
+    width: 750px;
+    height: 200px;
+}
+.data{
+    margin-left: 50px;
+    font-weight: 600;
+}
+
+.linha{
+    margin-top: -40px;
+    margin-left: 410px;
+    font-weight: 600;
+}
+
+.ass{
+    margin-left: 490px;
+    font-weight: 600;
+}
+.linhaASS{
+    margin-top: -40px;
+    margin-left: 385px;
+    font-weight: 600;
+}
+
+.assNCI{
+    margin-left: 535px;
+    font-weight: 600;
+}
+.linhaNFO{
+    margin-top: -40px;
+    margin-left: 410px;
+    font-weight: 600;
+}
+
+.assNFO{
+    margin-left: 555px;
+    font-weight: 600;
+}
+.info{
+    text-align: center;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 12px;
+    width: 380px;
+    margin-bottom: 30px;
+    margin-left: 375px;
+}
+/*      ALINHANDO AS LABELS      */
+/*###############################*/
+/*           Requerente          */
+.lbl-1{
+    width: 640px;
+    margin-top: 24px;
+    margin-left: 25px;
+    text-align: center;
+}
+.lbl-2{
+    width: 310px;
+    margin-top: 48px;
+    margin-left: 55px;
+    text-align: center;
+}
+.lbl-3{
+    width: 330px;
+    margin-top: 48px;
+    margin-left: 419px;
+    text-align: center;
+}
+.lbl-4{
+    width: 656px;
+    margin-top: 72px;
+    margin-left: 90px;
+    text-align: center;
+}
+.lbl-5{
+    width: 265px;
+    margin-top: 96px;
+    margin-left: 62px;
+    text-align: center;
+}
+/*##################################*/
+/*              Imovel              */
+.lbl-6{
+    width: 592px;
+    margin-top: 24px;
+    margin-left: 55px;
+    text-align: center;
+}
+.lbl-7{
+    width: 81px;
+    margin-top: 24px;
+    margin-left: 673px;
+    text-align: center;
+}
+.lbl-8{
+    width: 193px;
+    margin-top: 48px;
+    margin-left: 32px;
+    text-align: center;
+}
+.lbl-9{
+    width: 137px;
+    margin-top: 48px;
+    margin-left: 283px;
+    text-align: center;
+}
+.lbl-10{
+    width: 280px;
+    margin-top: 48px;
+    margin-left: 473px;
+    text-align: center;
+}
+.lbl-11{
+    width: 290px;
+    margin-top: 72px;
+    margin-left: 260px;
+    text-align: center;
+}
+.lbl-12{
+    width: 672px;
+    margin-top: 96px;
+    margin-left: 80px;
+    text-align: center;
+}
+.lbl-999{
+    width: 137px;
+    margin-top: 72px;
+    margin-left: 618px;
+    text-align: center;
+}
+
+/*####################################*/
+/*             Emplacamento           */
+
+.campoEmplac{
+    max-width: 750px;
+}
+.lbl-106{
+    border: 1px solid black;
+    width: 70px;
+    height: 20px;
+    margin-top: 72px;
+    margin-left: 675px;
+    text-align: center;
+    font-weight: bold;
+}
+.lbl-107{
+    border: 1px solid black;
+    width: 70px;
+    height: 20px;
+    margin-top: 96px;
+    margin-left: 675px;
+    text-align: center;
+    font-weight: bold;
+}
+.lbl-108{
+    width: 121px;
+    margin-top: 120px;
+    margin-left: 114px;
+    text-align: center;
+}
+.lbl-109{
+    width: 138px;
+    margin-top: 120px;
+    margin-left: 325px;
+    text-align: center;
+}
+.lbl-110{
+    width: 120px;
+    margin-top: 120px;
+    margin-left: 591px;
+    text-align: center;
+}
+.quadro_emplac_nfo{
+    border: 2px solid black;
+}
+
+.quadro_emplac_nfo .topo-emplac_nfo{
+    border-bottom: 2px solid black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.quadro_emplac_nfo .recuo{
+    margin-left: 5px;
+    margin-right: 5px;
+}
