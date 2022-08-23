@@ -23,6 +23,14 @@
     }    
 echo"
 <section class='vh-100 container-fluid' style='background-color: #9A616D;'>
+    <div class='position-absolute'>
+      <a href='./forms/ajuda/limpaTemp.php' class='btn btn-primary' onclick=\"return confirm('Certifique-se de que ninguém esta utilizando o sistema. \u000ATrabalhos em andamento serão perdidos. \u000ADeseja continuar?')\">
+        <img
+          src='./forms/img/clear.png' class='rounded mx-auto d-block limpeza' width='50px' heigth='75px' alt='logo' style='border-radius: 1rem 0 0 1rem;'
+        />
+        <span data-tooltip='Limpar dados temporarios do sistema'></span>
+      </a>
+    </div>
     <div class='row d-flex justify-content-center align-items-center h-100'> 
         <div class='card' style='border-radius: 1rem;'>
                 <div id='d-flex' class='d-flex align-items-center mb-3 pb-1'>
