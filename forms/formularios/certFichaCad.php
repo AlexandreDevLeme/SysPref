@@ -131,7 +131,7 @@ echo "
                 <button type='button' class='btn btn-outline-light' onClick=\"Print_Sub()\">IMPRIMIR</button>
         </div>   
         <div class='form-floating FC'>
-            <textarea class='form-control txtaddFC position-inherit' name='coments' id='floatingTextarea2 comentarios' style='height: 100px'></textarea>
+            <textarea class='form-control txtaddFC position-inherit' name='coments' id='floatingTextarea2 comentarios' style='height: 100px'>$obs</textarea>
             <label for='floatingTextarea2'>Observações</label>
         </div>
     </div>

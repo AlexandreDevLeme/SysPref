@@ -96,16 +96,16 @@ echo "
             </div>
             <div class='input-group input-group-sm mb-0 inp8 position-static'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Cadastro 1</span>
-                <input type='text' id='ncad1' name='ncad1' size='16' maxlength='16' class='form-control q1 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='ncad1' name='ncad1' value='$cadastro1' size='16' maxlength='16' class='form-control q1 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Cadastro 2</span>
-                <input type='text' id='ncad2' name='ncad2' size='16' maxlength='16' class='form-control q2 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='ncad2' name='ncad2' value='$cadastro2' size='16' maxlength='16' class='form-control q2 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Cadastro 3</span>
-                <input type='text' id='ncad3' name='ncad3' size='16' maxlength='16' class='form-control q3unif position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='ncad3' name='ncad3' value='$cadastro3' size='16' maxlength='16' class='form-control q3unif position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <button type='button' class='btn btn-outline-light' onClick=\"Print_Sub()\">IMPRIMIR</button>
             </div>
             <div class='input-group input-group-sm mb-0 inp9 position-static'>
                 <div class='form-floating'>
-                    <textarea class='form-control q4 position-static' name='coments' id='floatingTextarea2 comentarios' style='height: 100px'></textarea>
+                    <textarea class='form-control q4 position-static' name='coments' id='floatingTextarea2 comentarios' style='height: 100px'>$obs</textarea>
                     <label for='floatingTextarea2'>Observações</label>
                 </div>
             </div>

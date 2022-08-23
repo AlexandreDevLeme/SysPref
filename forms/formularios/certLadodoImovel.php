@@ -132,7 +132,7 @@ echo "
             </div>
             <div class='input-group input-group-sm mb-0 inp10 position-static'>
                 <div class='form-floating'>
-                    <textarea class='form-control q4 position-static' name='coments' id='floatingTextarea2 comentarios' style='height: 100px'></textarea>
+                    <textarea class='form-control q4 position-static' name='coments' id='floatingTextarea2 comentarios' style='height: 100px'>$obs</textarea>
                     <label for='floatingTextarea2'>Observações</label>
                 </div>
             </div>

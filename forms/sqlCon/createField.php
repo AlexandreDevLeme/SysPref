@@ -22,7 +22,6 @@
     {
         echo "
         <script language=\"javascript\" type=\"text/javascript\">
-            alert(document.getElementById(\"ocultAno\").value);
             var motivo = document.getElementById(\"campoS\");
             motivo.selectedIndex = 2;
 
@@ -31,7 +30,7 @@
             document.getElementById(\"motivo\").value = 2;
 
             var d = document.getElementById('revisao');
-            $(\"#revisao\").append(d.innerHTML + \"<nav id='temp' class='input-group input-group-sm mb-0 position-static menu2' aligin-itens='inline'><span class='input-group-text X1 position-static' id='inputGroup-sizing-sm'>Emitida em</span><input type='text' id='emitida' name='emitida' value='' size='4' maxlength='4' class='form-control X2 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm' placeholder='Informe o ano de emissão' onkeypress='return onlynumber();'><span class='input-group-text X3 position-static' id='inputGroup-sizing-sm'>Área de</span><input type='text' id='areade' name='areade' value='' size='4' maxlength='4' class='form-control X4 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm' placeholder='Informe a área lançada' onkeypress='return onlynumber();'></nav>\");
+            $(\"#revisao\").append(d.innerHTML + \"<nav id='temp' class='input-group input-group-sm mb-0 position-static menu2' aligin-itens='inline'><span class='input-group-text X1 position-static' id='inputGroup-sizing-sm'>Emitida em</span><input type='text' id='emitida' name='emitida' value='' size='4' maxlength='4' class='form-control X2 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm' placeholder='Informe o ano de emissão' onkeypress='return onlynumber();'><span class='input-group-text X3 position-static' id='inputGroup-sizing-sm'>Área de</span><input type='text' id='areade' name='areade' value='' size='8' maxlength='8' class='form-control X4 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm' placeholder='Informe a área lançada' onkeypress='return onlynumber();'></nav>\");
             document.getElementById(\"temp\").style.display = \"\";
 
             document.getElementById(\"emitida\").value = document.getElementById(\"ocultAno\").value; 
@@ -80,7 +79,7 @@
             document.getElementById(\"motivo\").value = 4;
                     
             var d = document.getElementById('revisao');
-            $(\"#revisao\").append(d.innerHTML + \"<nav id='temp' class='input-group input-group-sm mb-0 position-static menu4' aligin-itens='inline'><span class='input-group-text X41 position-static' id='inputGroup-sizing-sm'>Alvará n°</span><input type='text' id='n_alv' name='n_alv' value='' size='10' maxlength='10' class='form-control X42 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm' placeholder='N° do alvará' onkeypress='return onlynumber();'><span class='input-group-text X43 position-static' id='inputGroup-sizing-sm'>Data</span><input type='text' id='proj_data' name='proj_data' value='' size='10' maxlength='10' class='form-control X44 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm' placeholder='Informe a data de aprovação' onkeypress='return onlynumber();'><span class='input-group-text X45 position-static' id='inputGroup-sizing-sm'>Área de</span><input type='text' id='area_proj' name='area_proj' value='' size='4' maxlength='4' class='form-control X46 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm' placeholder='Informe a área do projeto' onkeypress='return onlynumber();'></nav>\");
+            $(\"#revisao\").append(d.innerHTML + \"<nav id='temp' class='input-group input-group-sm mb-0 position-static menu4' aligin-itens='inline'><span class='input-group-text X41 position-static' id='inputGroup-sizing-sm'>Alvará n°</span><input type='text' id='n_alv' name='n_alv' value='' size='10' maxlength='10' class='form-control X42 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm' placeholder='N° do alvará' onkeypress='return onlynumber();'><span class='input-group-text X43 position-static' id='inputGroup-sizing-sm'>Data</span><input type='text' id='proj_data' name='proj_data' value='' size='10' maxlength='10' class='form-control X44 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm' placeholder='Informe a data de aprovação' onkeypress='return onlynumber();'><span class='input-group-text X45 position-static' id='inputGroup-sizing-sm'>Área de</span><input type='text' id='area_proj' name='area_proj' value='' size='8' maxlength='8' class='form-control X46 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm' placeholder='Informe a área do projeto' onkeypress='return onlynumber();'></nav>\");
             document.getElementById(\"temp\").style.display = \"\";
 
             document.getElementById(\"n_alv\").value = document.getElementById(\"ocultAlvara\").value; 

@@ -291,25 +291,41 @@ if (isset($_SESSION['reimpressao']))//carregar dados para reimpressão
             $area         = $_SESSION['areaEmp'];
             $obs          = $_SESSION['obsEmp'];
         }
-        elseif ($_SESSION['docPrint'] == '')
+        elseif ($_SESSION['docPrint'] == 'LADO')
         {
-            
+            $obs          = $_SESSION['coments']; 
         }
-        elseif ($_SESSION['docPrint'] == '')
+        elseif ($_SESSION['docPrint'] == 'FICHA CADASTRAL')
         {
-            
+            $obs          = $_SESSION['coments'];
         }
-        elseif ($_SESSION['docPrint'] == '')
+        elseif ($_SESSION['docPrint'] == 'MEDIÇÃO / VERIFICAÇÃO "IN LOCO"')
         {
-            
+            $obs          = $_SESSION['coments'];
         }
-        elseif ($_SESSION['docPrint'] == '')
+        elseif ($_SESSION['docPrint'] == 'VALOR VENAL')
         {
-            
+            $ano          = $_SESSION['ano'];
         }
-        elseif ($_SESSION['docPrint'] == '')
+        elseif ($_SESSION['docPrint'] == 'RENOVAÇÃO DO ALVARÁ DE CONSTRUÇÃO')
         {
-            
+            $alvara     =   $_SESSION['n_alv'];
+            $data       =   $_SESSION['proj_data'];
+            $area       =   $_SESSION['area_Proj'];
+        }
+        elseif ($_SESSION['docPrint'] == 'RENOVAÇÃO DE CERTIDÃO DE DESDOBRO')
+        { 
+            $cadastro1      = $_SESSION['ncad1'];
+            $cadastro2      = $_SESSION['ncad2'];
+            $cadastro3      = $_SESSION['ncad3'];
+            $obs            = $_SESSION['coments'];
+        }
+        elseif ($_SESSION['docPrint'] == 'RENOVAÇÃO DE CERTIDÃO DE UNIFICAÇÃO')
+        {
+            $cadastro1      = $_SESSION['ncad1'];
+            $cadastro2      = $_SESSION['ncad2'];
+            $cadastro3      = $_SESSION['ncad3'];
+            $obs            = $_SESSION['coments'];
         }
         elseif ($_SESSION['docPrint'] == 'REVISÃO DE IPTU')
         {

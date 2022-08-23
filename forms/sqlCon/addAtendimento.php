@@ -1935,7 +1935,7 @@ if($_SESSION['gravarDados'] == 'GRAVAR')
         unset($_SESSION['new_Proprietario']);   
     }
 
-    elseif(isset($_SESSION['className']) and $_SESSION['className'] == 'FICHA CADASTRAL')
+    elseif(isset($_SESSION['className']) and $_SESSION['className'] == 'FICHA CADASTRAL')//reimpressão ok
     {
         $comentarios = $_SESSION['coments'];;
         
@@ -2018,7 +2018,7 @@ if($_SESSION['gravarDados'] == 'GRAVAR')
         unset($_SESSION['new_Proprietario']);   
     }
 
-    elseif(isset($_SESSION['className']) and $_SESSION['className'] == 'RENOVAÇÃO DO ALVARÁ DE CONSTRUÇÃO')
+    elseif(isset($_SESSION['className']) and $_SESSION['className'] == 'RENOVAÇÃO DO ALVARÁ DE CONSTRUÇÃO')//reimpressão ok
     {
         $convertDate = substr($_SESSION['aproCop'], 6, 4).'/'.substr($_SESSION['aproCop'], 3, 2).'/'.substr($_SESSION['aproCop'], 0, 2);
 
@@ -2109,7 +2109,7 @@ if($_SESSION['gravarDados'] == 'GRAVAR')
         unset($_SESSION['new_Proprietario']);
     }
 
-    elseif(isset($_SESSION['className']) and $_SESSION['className'] == 'RENOVAÇÃO DE CERTIDÃO DE DESDOBRO')
+    elseif(isset($_SESSION['className']) and $_SESSION['className'] == 'RENOVAÇÃO DE CERTIDÃO DE DESDOBRO')//reimpressão ok
     {
         
         $desdCadastro1   = $_SESSION['ncad1'];
@@ -2123,7 +2123,6 @@ if($_SESSION['gravarDados'] == 'GRAVAR')
         {
             $strInsert = $pdo->prepare("UPDATE atendimentos SET num_doc=:num_doc,alt_por=:alt_por,data_alt=:data_alt,documento=:documento,
                                                             nome=:nome,cpf=:cpf,rg=:rg,tel=:telefone,cel=:celular,endereco=:endereco,numero=:numero,complemento=:complemento,bairro=:bairro,cep=:cep,cidade=:cidade,estado=:estado,
-                                                            n_cad=:im_Cadastro,n_carne=:carne,rua=:im_Rua,numero_r=:im_Numero,lote=:im_Lote,quadra=:im_Quadra,bairro_r=:im_Bairro,proprietario=:im_Proprietario,
                                                             cad_1=:desdCadastro1,cad_2=:desdCadastro2,cad_3=:desdCadastro3,obs=:desdComentarios
                                                             WHERE num_doc=:num_doc");
         }else{
@@ -2191,7 +2190,7 @@ if($_SESSION['gravarDados'] == 'GRAVAR')
         unset($_SESSION['new_Proprietario']);
     }
 
-    elseif(!empty($_SESSION['className']) and $_SESSION['className'] == 'RENOVAÇÃO DE CERTIDÃO DE UNIFICAÇÃO')
+    elseif(!empty($_SESSION['className']) and $_SESSION['className'] == 'RENOVAÇÃO DE CERTIDÃO DE UNIFICAÇÃO')//reimpressão ok
     {
         $unifCadastro1   = $_SESSION['ncad1'];
         $unifCadastro2   = $_SESSION['ncad2'];
@@ -2204,7 +2203,6 @@ if($_SESSION['gravarDados'] == 'GRAVAR')
         {
             $strInsert = $pdo->prepare("UPDATE atendimentos SET num_doc=:num_doc,alt_por=:alt_por,data_alt=:data_alt,documento=:documento,
                                                             nome=:nome,cpf=:cpf,rg=:rg,tel=:telefone,cel=:celular,endereco=:endereco,numero=:numero,complemento=:complemento,bairro=:bairro,cep=:cep,cidade=:cidade,estado=:estado,
-                                                            n_cad=:im_Cadastro,n_carne=:carne,rua=:im_Rua,numero_r=:im_Numero,lote=:im_Lote,quadra=:im_Quadra,bairro_r=:im_Bairro,proprietario=:im_Proprietario,
                                                             cad_1=:unifCadastro1,cad_2=:unifCadastro2,cad_3=:unifCadastro3,obs=:unifComentarios
                                                             WHERE num_doc=:num_doc");
         }else{

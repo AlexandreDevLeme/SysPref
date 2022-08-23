@@ -133,11 +133,11 @@ echo "
             </div>
             <div class='input-group input-group-sm mb-0 inp10 position-static'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Conforme alvará n°</span>
-                <input type='text' id='alvCop' name='alvCop' size='16' maxlength='16' class='form-control r1 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='alvCop' name='alvCop' value='$alvara' size='16' maxlength='16' class='form-control r1 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Aprovado em</span>
-                <input type='text' id='aproCop' name='aproCop' size='10' maxlength='10' class='form-control r2 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='aproCop' name='aproCop' value='$data' size='10' maxlength='10' class='form-control r2 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>área construida de</span>
-                <input type='text' id='areaCop' name='areaCop' size='16' maxlength='16' class='form-control r3 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='areaCop' name='areaCop' value='$area' size='16' maxlength='16' class='form-control r3 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text position-static r4' id='inputGroup-sizing-sm'> m²</span>
                 <button type='button' class='btn btn-outline-light' onClick=\"Print_Sub()\">IMPRIMIR</button>
             </div>

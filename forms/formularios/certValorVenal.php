@@ -132,7 +132,7 @@ echo "
                 </div> 
                 <div class='input-group input-group-sm mb-0 inp9 position-static'>
                     <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Ano</span>
-                    <input type='text' id='anoVv' name='anoVv' size='16' maxlength='4' class='form-control o1 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                    <input type='text' id='anoVv' name='anoVv' value='$ano' size='16' maxlength='4' class='form-control o1 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                     <button type='button' class='btn btn-outline-light' onClick=\"Print_Sub()\">IMPRIMIR</button>
                 </div>
             </div>

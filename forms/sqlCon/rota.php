@@ -300,47 +300,86 @@
                 $_SESSION['obsEmp']         = $row['obs'];
                 $paginaAlvo                 = '../formularios/certEmplacamento.php';
 
-            }elseif ($row['documento'] == '')
+            }elseif ($row['documento'] == 'LADO')
             {
-                $_SESSION['docPrint']       = 'CONFRONTANTES';
+                $_SESSION['docPrint']       = 'LADO';
                 $_SESSION['codigoMantido']  = $row['num_doc'];
                 $_SESSION['cpf']            = $row['cpf'];
                 $_SESSION['cadastro']       = $row['n_cad'];
-                $paginaAlvo                 = '../formularios/confrontantes.php';
+                $_SESSION['coments']        = $row['obs'];
 
-            }elseif ($row['documento'] == '')
+                $paginaAlvo                 = '../formularios/certLadodoImovel.php';
+
+            }elseif ($row['documento'] == 'FICHA CADASTRAL')
             {
-                $_SESSION['docPrint']       = 'CONFRONTANTES';
+                $_SESSION['docPrint']       = 'FICHA CADASTRAL';
                 $_SESSION['codigoMantido']  = $row['num_doc'];
                 $_SESSION['cpf']            = $row['cpf'];
                 $_SESSION['cadastro']       = $row['n_cad'];
-                $paginaAlvo                 = '../formularios/confrontantes.php';
+                $_SESSION['coments']        = $row['obs'];
 
-            }elseif ($row['documento'] == '')
+                $paginaAlvo                 = '../formularios/certFichaCad.php';
+
+            }elseif ($row['documento'] == 'MEDIÇÃO / VERIFICAÇÃO "IN LOCO"')
             {
-                $_SESSION['docPrint']       = 'CONFRONTANTES';
+                $_SESSION['docPrint']       = 'MEDIÇÃO / VERIFICAÇÃO "IN LOCO"';
                 $_SESSION['codigoMantido']  = $row['num_doc'];
                 $_SESSION['cpf']            = $row['cpf'];
                 $_SESSION['cadastro']       = $row['n_cad'];
-                $paginaAlvo                 = '../formularios/confrontantes.php';
+                $_SESSION['coments']        = $row['obs'];
 
-            }elseif ($row['documento'] == '')
+                $paginaAlvo                 = '../formularios/certMedInLoco.php';
+
+            }elseif ($row['documento'] == 'VALOR VENAL')
             {
-                $_SESSION['docPrint']       = 'CONFRONTANTES';
+                $_SESSION['docPrint']       = 'VALOR VENAL';
                 $_SESSION['codigoMantido']  = $row['num_doc'];
                 $_SESSION['cpf']            = $row['cpf'];
                 $_SESSION['cadastro']       = $row['n_cad'];
-                $paginaAlvo                 = '../formularios/confrontantes.php';
+                $_SESSION['ano']            = $row['ano'];
 
-            }elseif ($row['documento'] == '')
+                $paginaAlvo                 = '../formularios/certValorVenal.php';
+
+            }elseif ($row['documento'] == 'RENOVAÇÃO DO ALVARÁ DE CONSTRUÇÃO')
             {
-                $_SESSION['docPrint']       = 'CONFRONTANTES';
+                $_SESSION['docPrint']       = 'RENOVAÇÃO DO ALVARÁ DE CONSTRUÇÃO';
                 $_SESSION['codigoMantido']  = $row['num_doc'];
                 $_SESSION['cpf']            = $row['cpf'];
                 $_SESSION['cadastro']       = $row['n_cad'];
-                $paginaAlvo                 = '../formularios/confrontantes.php';
+                $_SESSION['n_alv']      = $row['conf_alvara'];
+                $convertDate = substr($row['data_aprov'], 8, 2).'/'.substr($row['data_aprov'], 5, 2).'/'.substr($row['data_aprov'], 0, 4);
+                $_SESSION['proj_data']  = $convertDate;
+                $_SESSION['area_Proj']  = $row['area_const'];
 
-            }elseif ($row['documento'] == 'REVISÃO DE IPTU')// revisão de iptu
+                $paginaAlvo                 = '../formularios/certRenCopiaAlvara.php';
+
+            }elseif ($row['documento'] == 'RENOVAÇÃO DE CERTIDÃO DE DESDOBRO')
+            {
+                $_SESSION['docPrint']       = 'RENOVAÇÃO DE CERTIDÃO DE DESDOBRO';
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $_SESSION['ncad1']          = $row['cad_1'];
+                $_SESSION['ncad2']          = $row['cad_2'];
+                $_SESSION['ncad3']          = $row['cad_3'];
+                $_SESSION['coments']        = $row['obs'];
+
+                $paginaAlvo                 = '../formularios/certRenCertDesdobro.php';
+
+            }elseif ($row['documento'] == 'RENOVAÇÃO DE CERTIDÃO DE UNIFICAÇÃO')
+            {
+                $_SESSION['docPrint']       = 'RENOVAÇÃO DE CERTIDÃO DE UNIFICAÇÃO';
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $_SESSION['ncad1']          = $row['cad_1'];
+                $_SESSION['ncad2']          = $row['cad_2'];
+                $_SESSION['ncad3']          = $row['cad_3'];
+                $_SESSION['coments']        = $row['obs'];
+
+                $paginaAlvo                 = '../formularios/certUnificacao.php';
+
+            }elseif ($row['documento'] == 'REVISÃO DE IPTU')
             {
                 $_SESSION['docPrint']       = 'REVISÃO DE IPTU';
                 $_SESSION['carne']          = $row['n_carne'];

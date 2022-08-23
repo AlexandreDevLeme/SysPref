@@ -28,19 +28,24 @@ while ($row = $newCod->FETCH(PDO::FETCH_ASSOC)){
  //GERAR A STRING CONCATENANDO '-' COM A DATA DO DIA ATUAL
 $dia = '-'.date('d').date('m').date('y');
 
-//COLETAR O NÚMERO DO CÓDIGO DO ULTIMO REGISTRO
+//COLETAR O NÚMERO DO CÓDIGO DO ULTIMO REGISTRO E CALCULAR O PRÓXIMO
 $matriz = IntVal(substr($next, 0, (strpos($next, '-')))) + 1;
 
-//CONERTER O NÚMERO DE INT PARA STRING
+//CONTANDO O NÚMERO DE CARACTERES
 $calc = strlen($matriz);
 
- //GERAR O NOVO NUMERO DE REQUERIMENTO
- if($_SESSION['gravarDados'] == 'NÃO GRAVAR')
- {
-     $_id = '____________';  
- }else{
-     $_id = StrVal($matriz).$dia;
- }
+if (isset($_SESSION['codigoMantido']))
+{
+    $_id = $_SESSION['codigoMantido'];
+}else{
+    //GERAR O NOVO NUMERO DE REQUERIMENTO
+    if($_SESSION['gravarDados'] == 'NÃO GRAVAR')
+    {
+        $_id = '____________';  
+    }else{
+        $_id = StrVal($matriz).$dia;
+    }
+}
 
  //RECUPERAR DA SESSÃO O NOME DO OPERADOR
 $_op = $_SESSION['operador'];
