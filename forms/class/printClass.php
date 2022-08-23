@@ -106,17 +106,18 @@ class RevisaoIPTU
 {
     public $menu;
     public $Motivo; //motivo da solicitação | Referente a todos os itens do menu
+    public $n_carne; //exclusivo da Revisão de IPTU
     public $AreaCarne;//Referente aos itens 1 do menu
     public $DesData;// Referente aos itens 3 do menu
     public $AnoCarne;// Referente aos itens 1 do menu
     public $Emitida;// Referente aos itens 2 do menu
     public $Areade;// Referente aos itens 2 do menu
     public $UniData;// Referente aos itens 6 do menu
+    public $cadastro1;// Referente aos itens 3 e 6 do menu
     public $cadastro2;// Referente aos itens 3 e 6 do menu
     public $cadastro3;// Referente aos itens 3 e 6 do menu
     public $cadastro4;// Referente aos itens 3 e 6 do menu
     public $cadastro5;// Referente aos itens 3 e 6 do menu
-    public $cadastro6;// Referente aos itens 3 e 6 do menu
     public $n_alv;// Referente aos itens 4 do menu
     public $proj_data;// Referente aos itens 4 do menu
     public $area_Proj;// Referente aos itens 4 do menu
@@ -141,6 +142,7 @@ class Emplacamento
     public $alvEmp;
     public $aproEmp;
     public $areaEmp;
+    public $obsEmp;
 
 }
 
@@ -213,7 +215,12 @@ class renUnificacao
         }
         if (!empty($_POST['endR']))
         {
-            $Contribuinte->req_End = $_POST['endR']. ", ". $_POST['numR']. " - ". $_POST['bairroR']. " - ". $_POST['cidR']. "/". $_POST['ufR'];
+            if (isset($_POST['complementoR']))
+            {
+                $Contribuinte->req_End = $_POST['endR']. ", ". $_POST['numR']. " - ". $_POST['complementoR']. " - ". $_POST['bairroR']. " - ". $_POST['cidR']. "/". $_POST['ufR'];
+            }else{
+                $Contribuinte->req_End = $_POST['endR']. ", ". $_POST['numR']. " - ". $_POST['bairroR']. " - ". $_POST['cidR']. "/". $_POST['ufR'];
+            }
         }    
         if(!empty($_POST['telR']) and !empty($_POST['celR']))
         {
@@ -256,13 +263,9 @@ class renUnificacao
             {
                 $Contribuinte->req_End = ' ';
             }
-            if($_POST['telR'] == '')
+            if($_POST['telR'] == '' and $_POST['celR'] == '')
             {
-                $Contribuinte->req_Contato = ' '; 
-            }
-            if($_POST['celR'] == '')
-            {
-                $Contribuinte->req_Contato = ' ';  
+                $Contribuinte->req_Contato = ' ';
             }
         }
     //#####################################################################################################################################
@@ -312,7 +315,8 @@ class renUnificacao
 
         if(isset($_POST['carne']) and !empty($_POST['carne']))
         {
-            $carne = $_POST['carne'];    
+            $carne                 = $_POST['carne'];
+            $_SESSION['new_Carne'] = $carne;    
         }else{
             $carne = ' ';
         }
@@ -369,7 +373,17 @@ if(isset($_POST['className']) and $_POST['className'] == 'AMPLIAÇÃO')//conclu�
     // Recebe o nome do formulario solicitante
     $referencia->formName = $_POST['className'];
     // Escreve um comentário no rodape do formulario
-    $referencia->formObs = 'O pagamento da taxa na Secretaria de Finanças é indispensável para a conclusão desta solicitação';    
+    $referencia->formObs = 'O pagamento da taxa na Secretaria de Finanças é indispensável para a conclusão desta solicitação';
+    
+    unset($_SESSION['docPrint']); 
+    unset($_SESSION['cpf']);       
+    unset($_SESSION['cadastro']);   
+    unset($_SESSION['conforme']);  
+    unset($_SESSION['data']);  
+    unset($_SESSION['fase1']);   
+    unset($_SESSION['aumento']);  
+    unset($_SESSION['total']);   
+    unset($_SESSION['obs']);
 }
 
 elseif(isset($_POST['className']) and $_POST['className'] == 'ATUALIZAÇÃO DOS DADOS CADASTRAIS')//concluido
@@ -446,6 +460,18 @@ elseif(isset($_POST['className']) and $_POST['className'] == 'ATUALIZAÇÃO DOS 
     $referencia->formName = $_POST['className'];
     // Escreve um comentário no rodape do formulario
     $referencia->formObs = 'Anexar cópia da escritura, matrícula ou contrato de compra e venda. Protocolar na prefeitura.';
+
+    unset($_SESSION['docPrint']);
+    unset($_SESSION['nomeN']);
+    unset($_SESSION['cpfN']);
+    unset($_SESSION['rgN']);
+    unset($_SESSION['endN']);
+    unset($_SESSION['numN']);
+    unset($_SESSION['bairroN']);
+    unset($_SESSION['cepN']);
+    unset($_SESSION['cidadeN']);
+    unset($_SESSION['estadoN']);
+    unset($_SESSION['obs']);
 }
 
 elseif(isset($_POST['className']) and $_POST['className'] == 'B.C.I. (BOLETIM DO CADASTRAMENTO DE IMÓVEL)')//concluido
@@ -527,6 +553,7 @@ elseif(isset($_POST['className']) and $_POST['className'] == 'REVISÃO DE IPTU')
         $rev_iptu = new revisaoIPTU;
         $rev_iptu->menu  = '1';
         $rev_iptu->Motivo = 'Área no local difere do constante em carnê de IPTU';
+        $rev_iptu->n_carne = $_POST['carne'];
         
         if(!empty($_POST['areaCarne']))
         {
@@ -578,24 +605,24 @@ elseif(isset($_POST['className']) and $_POST['className'] == 'REVISÃO DE IPTU')
         }
         if(!empty($_POST['ncad2']))
         {
-            $rev_iptu->cadastro2 = $_POST['ncad2'];
+            $rev_iptu->cadastro1 = $_POST['ncad2'];
         }else{
-            $rev_iptu->cadastro2 = ' ';
+            $rev_iptu->cadastro1 = ' ';
         }
         if(!empty($_POST['ncad3']))
         {
-            $rev_iptu->cadastro3 = $_POST['ncad3'];
+            $rev_iptu->cadastro2 = $_POST['ncad3'];
         }else{
-            $rev_iptu->cadastro3 = ' ';
+            $rev_iptu->cadastro2 = ' ';
         }
         
         if(isset($_POST['ncad4']))
         {
             if(!empty($_POST['ncad4']))
             {
-                $rev_iptu->cadastro4 = $_POST['ncad4'];
+                $rev_iptu->cadastro3 = $_POST['ncad4'];
             }else{
-                $rev_iptu->cadastro4 = ' ';
+                $rev_iptu->cadastro3 = ' ';
             }
         }
         
@@ -603,9 +630,9 @@ elseif(isset($_POST['className']) and $_POST['className'] == 'REVISÃO DE IPTU')
         {
             if(!empty($_POST['ncad5']))
             {
-                $rev_iptu->cadastro5 = $_POST['ncad5'];
+                $rev_iptu->cadastro4 = $_POST['ncad5'];
             }else{
-                $rev_iptu->cadastro5 = ' ';
+                $rev_iptu->cadastro4 = ' ';
             }
         }
         
@@ -613,9 +640,9 @@ elseif(isset($_POST['className']) and $_POST['className'] == 'REVISÃO DE IPTU')
         {
             if(!empty($_POST['ncad6']))
             {
-                $rev_iptu->cadastro6 = $_POST['ncad6'];
+                $rev_iptu->cadastro5 = $_POST['ncad6'];
             }else{
-                $rev_iptu->cadastro6 = ' ';
+                $rev_iptu->cadastro5 = ' ';
             }
         }
 
@@ -666,24 +693,24 @@ elseif(isset($_POST['className']) and $_POST['className'] == 'REVISÃO DE IPTU')
         }
         if(!empty($_POST['ncad2']))
         {
-            $rev_iptu->cadastro2 = $_POST['ncad2'];
+            $rev_iptu->cadastro1 = $_POST['ncad2'];
         }else{
-            $rev_iptu->cadastro2 = ' ';
+            $rev_iptu->cadastro1 = ' ';
         }
         if(!empty($_POST['ncad3']))
         {
-            $rev_iptu->cadastro3 = $_POST['ncad3'];
+            $rev_iptu->cadastro2 = $_POST['ncad3'];
         }else{
-            $rev_iptu->cadastro3 = ' ';
+            $rev_iptu->cadastro2 = ' ';
         }
         
         if(isset($_POST['ncad4']))
         {
             if(!empty($_POST['ncad4']))
             {
-                $rev_iptu->cadastro4 = $_POST['ncad4'];
+                $rev_iptu->cadastro3 = $_POST['ncad4'];
             }else{
-                $rev_iptu->cadastro4 = ' ';
+                $rev_iptu->cadastro3 = ' ';
             }
         }
         
@@ -691,9 +718,9 @@ elseif(isset($_POST['className']) and $_POST['className'] == 'REVISÃO DE IPTU')
         {
             if(!empty($_POST['ncad5']))
             {
-                $rev_iptu->cadastro5 = $_POST['ncad5'];
+                $rev_iptu->cadastro4 = $_POST['ncad5'];
             }else{
-                $rev_iptu->cadastro5 = ' ';
+                $rev_iptu->cadastro4 = ' ';
             }
         }
         
@@ -701,9 +728,9 @@ elseif(isset($_POST['className']) and $_POST['className'] == 'REVISÃO DE IPTU')
         {
             if(!empty($_POST['ncad6']))
             {
-                $rev_iptu->cadastro6 = $_POST['ncad6'];
+                $rev_iptu->cadastro5 = $_POST['ncad6'];
             }else{
-                $rev_iptu->cadastro6 = ' ';
+                $rev_iptu->cadastro5 = ' ';
             }
         }
 
@@ -900,6 +927,12 @@ elseif(isset($_POST['className']) and $_POST['className'] == 'EMPLACAMENTO')//co
         $emplacar->areaEmp = $_POST['areaEmp'];
     }else{
         $emplacar->areaEmp = ' ';
+    }
+
+    if(!empty($_POST['coments'])){
+        $emplacar->obsEmp = $_POST['coments'];
+    }else{
+        $emplacar->obsEmp = '________________________________________________________________________________________';
     }
 
     $referencia = new Titulos;

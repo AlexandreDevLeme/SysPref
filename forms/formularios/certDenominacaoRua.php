@@ -93,18 +93,18 @@ echo "
         <div class='reg_imovel background2'><!--Abertura da div imovel-->
             <div class='input-group input-group-sm mb-0 inp6 position-static'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Antiga Rua</span>
-                <input type='text' id='ruaAntiga' name='ruaAntiga' value='' class='form-control i12 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='ruaAntiga' name='ruaAntiga' value='$den_ruaAntiga' class='form-control i12 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
             </div>
             <div class='input-group input-group-sm mb-0 inp8 position-static'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Atual Rua</span>
-                <input type='text' id='ruaAtual' name='ruaAtual' value='' class='form-control i12 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='ruaAtual' name='ruaAtual' value='$den_ruaAtual' class='form-control i12 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
             </div>
             <div class='input-group input-group-sm mb-0 inp8 position-static'>    
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Bairro</span>
-                <input type='text' id='vila' name='vila' value='' size='50' maxlength='50' class='form-control i16 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='vila' name='vila' value='$den_bairro' size='50' maxlength='50' class='form-control i16 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
             </div>
             <div class='form-floating'>
-                <textarea class='form-control denrua4 position-static' name='coments' id='floatingTextarea2 comentarios' style='height: 100px'></textarea>
+                <textarea class='form-control denrua4 position-static' name='coments' id='floatingTextarea2 comentarios' style='height: 100px'>$obs</textarea>
                 <label for='floatingTextarea2'>Observações</label>
             </div>
         </div>

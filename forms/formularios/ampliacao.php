@@ -16,6 +16,8 @@ if(isset($_SESSION['bdlogado']))
     echo "<script>window.location.replace(\"../index.php\")</script>";
 }
 require "../sqlCon/Consulta_R_I.php";
+
+
 /*########################### Dados do requerente ################################*/
 echo "
     <div class='container-fluid'>
@@ -124,6 +126,7 @@ echo "
         </div><!--Fechamento da div imovel-->
     <p>";
 /*########################### Dados do Individuais ################################*/
+
 echo "
         <div class='dadosAmpl background3'>
             <div class='input-group input-group-sm mb-0 title3 position-static'>
@@ -131,25 +134,25 @@ echo "
             </div>
             <div class='input-group input-group-sm mb-0 inp10 position-static'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Construido conforme alvará n°</span>
-                <input type='text' id='alvAmpl' name='alvAmpl' size='16' maxlength='16' class='form-control e1 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='alvAmpl' name='alvAmpl' value='$conforme' size='10' maxlength='10' class='form-control e1 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Aprovado em</span>
-                <input type='text' id='aproAmpl' name='aproAmpl' size='10' maxlength='10' class='form-control e2 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='aproAmpl' name='aproAmpl' value='$data' size='10' maxlength='10' class='form-control e2 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>foi edificado em sua 1° fase uma área de</span>
-                <input type='text' id='area1Ampl' name='area1Ampl' size='16' maxlength='16' class='form-control e3 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='area1Ampl' name='area1Ampl' value='$fase1' size='9' maxlength='9' class='form-control e3 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text position-static e3a' id='inputGroup-sizing-sm'> m²</span>
             </div>
             <div class='input-group input-group-sm mb-0 inp11 position-static'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>posteriormente sofreu alteração de</span>
-                <input type='text' id='area2Ampl' name='area2Ampl' size='16' maxlength='100' class='form-control e4 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='area2Ampl' name='area2Ampl' value='$aumento' size='9' maxlength='9' class='form-control e4 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text e4a position-static' id='inputGroup-sizing-sm'>m²</span>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>totalizando uma área de construção de</span>
-                <input type='text' id='area3Ampl' name='area3Ampl' size='16' maxlength='100' class='form-control e5 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='area3Ampl' name='area3Ampl' value='$total' size='9' maxlength='9' class='form-control e5 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text e5a position-static' id='inputGroup-sizing-sm'>m²</span>
                 <input type='text' id='motivo' name='className' value='AMPLIAÇÃO' class='motivo y11'></input>
                 <button type='button' class='btn btn-outline-light amplPos' onClick=\"Print_Sub()\">IMPRIMIR</button>
             </div>
             <div id='y10' class='form-floating'>
-                <textarea class='form-control position-static' name='coments' id='floatingTextarea2 comentarios' style='height: 100px'></textarea>
+                <textarea class='form-control position-static' name='coments' id='floatingTextarea2 comentarios' style='height: 100px'>$obs</textarea>
                 <label for='floatingTextarea2'>Observações</label>
             </div>
         </div>

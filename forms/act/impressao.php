@@ -38,12 +38,17 @@ $matriz = IntVal(substr($next, 0, (strpos($next, '-')))) + 1;
 //CONERTER O NÚMERO DE INT PARA STRING
 $calc = strlen($matriz);
 
- //GERAR O NOVO NUMERO DE REQUERIMENTO
-if($_SESSION['gravarDados'] == 'NÃO GRAVAR')
+if (isset($_SESSION['codigoMantido']))
 {
-    $_id = '____________';  
+    $_id = $_SESSION['codigoMantido'];
 }else{
-    $_id = StrVal($matriz).$dia;
+    //GERAR O NOVO NUMERO DE REQUERIMENTO
+    if($_SESSION['gravarDados'] == 'NÃO GRAVAR')
+    {
+        $_id = '____________';  
+    }else{
+        $_id = StrVal($matriz).$dia;
+    }
 }
 
  //RECUPERAR DA SESSÃO O NOME DO OPERADOR
@@ -83,8 +88,15 @@ echo "<div class='container'>
             <div class='linha-fx'>Residente em __________________________________________________________________________________ , </div>
             <div class='linha-fx'>Telefone, _________________________________</div><p>
         ";
-
-        echo "<div class='doc_print'>Vem mui respeitosamente solicitar ao Núcleo de Cadastro Imobiliário que seja expedida a Certidão de <label class='varDoc'>$documento</label> $termino</div>";
+        
+        if ($documento == 'CÓPIA DO ALVARÁ DE CONSTRUÇÃO')
+        {
+            echo "<div class='doc_print'>Vem mui respeitosamente solicitar ao Núcleo de Cadastro Imobiliário que seja fornecida a <label class='varDoc'>$documento</label> $termino</div>";
+        }elseif ($documento ==  'MEDIÇÃO / VERIFICAÇÃO "IN LOCO"'){
+            echo "<div class='doc_print'>Vem mui respeitosamente solicitar ao Núcleo de Cadastro Imobiliário que seja solicitada a <label class='varDoc'>$documento</label> $termino</div>";
+        }else{
+            echo "<div class='doc_print'>Vem mui respeitosamente solicitar ao Núcleo de Cadastro Imobiliário que seja expedida a Certidão de <label class='varDoc'>$documento</label> $termino</div>";
+        }
 
         echo "
             <label class='lbl-6 position-absolute'>$Residencia->im_Rua</label>

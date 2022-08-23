@@ -253,8 +253,8 @@ elseif ($referencia->formName == 'REVISÃO DE IPTU')//gravando em banco
         ";
                 echo "
                     <label class='lbl-80 position-absolute'>$rev_iptu->DesData</label>
-                    <label class='lbl-81 position-absolute'>$rev_iptu->cadastro2</label>
-                    <label class='lbl-82 position-absolute'>$rev_iptu->cadastro3</label>
+                    <label class='lbl-81 position-absolute'>$rev_iptu->cadastro1</label>
+                    <label class='lbl-82 position-absolute'>$rev_iptu->cadastro2</label>
                 ";
                 echo "<div class='linha-fx'>Data _______________________ Cadastros __________________________ , __________________________ </div>";
 
@@ -262,41 +262,41 @@ elseif ($referencia->formName == 'REVISÃO DE IPTU')//gravando em banco
                 $_SESSION['menu']         = $rev_iptu->menu;
                 $_SESSION['Motivo']       = $rev_iptu->Motivo;
                 $_SESSION['DesData']      = $rev_iptu->DesData;
+                $_SESSION['cadastro1']    = $rev_iptu->cadastro1;
                 $_SESSION['cadastro2']    = $rev_iptu->cadastro2;
-                $_SESSION['cadastro2']    = $rev_iptu->cadastro3;
 
-                if($rev_iptu->cadastro4 <> '' and $rev_iptu->cadastro5 == '' and $rev_iptu->cadastro6 == '')
+                if($rev_iptu->cadastro3 <> '' and $rev_iptu->cadastro4 == '' and $rev_iptu->cadastro5 == '')
                 {
                     echo "
-                        <label class='lbl-83 position-absolute'>$rev_iptu->cadastro4</label>
+                        <label class='lbl-83 position-absolute'>$rev_iptu->cadastro3</label>
                     ";
                     echo "<div class='linha-fx'> ____________________________ </div>";
                     
-                    $_SESSION['cadastro4']    = $rev_iptu->cadastro4;
+                    $_SESSION['cadastro3']    = $rev_iptu->cadastro3;
                 }
-                if($rev_iptu->cadastro4 <> '' and $rev_iptu->cadastro5 <> '' and $rev_iptu->cadastro6 == '')
+                if($rev_iptu->cadastro3 <> '' and $rev_iptu->cadastro4 <> '' and $rev_iptu->cadastro5 == '')
                 {
                     echo "
-                        <label class='lbl-83 position-absolute'>$rev_iptu->cadastro4</label>
-                        <label class='lbl-84 position-absolute'>$rev_iptu->cadastro5</label>
+                        <label class='lbl-83 position-absolute'>$rev_iptu->cadastro3</label>
+                        <label class='lbl-84 position-absolute'>$rev_iptu->cadastro4</label>
                     ";
                     echo "<div class='linha-fx'> ____________________________ , ____________________________ </div>";
                     
-                    $_SESSION['cadastro4']    = $rev_iptu->cadastro4;
-                    $_SESSION['cadastro5']    = $rev_iptu->cadastro5;  
+                    $_SESSION['cadastro3']    = $rev_iptu->cadastro3;
+                    $_SESSION['cadastro4']    = $rev_iptu->cadastro4;  
                 }
-                if($rev_iptu->cadastro4 <> '' and $rev_iptu->cadastro5 <> '' and $rev_iptu->cadastro6 <> '')
+                if($rev_iptu->cadastro3 <> '' and $rev_iptu->cadastro4 <> '' and $rev_iptu->cadastro5 <> '')
                 {
                     echo "
-                        <label class='lbl-83 position-absolute'>$rev_iptu->cadastro4</label>
-                        <label class='lbl-84 position-absolute'>$rev_iptu->cadastro5</label>
-                        <label class='lbl-85 position-absolute'>$rev_iptu->cadastro6</label>
+                        <label class='lbl-83 position-absolute'>$rev_iptu->cadastro3</label>
+                        <label class='lbl-84 position-absolute'>$rev_iptu->cadastro4</label>
+                        <label class='lbl-85 position-absolute'>$rev_iptu->cadastro5</label>
                     ";
                     echo "<div class='linha-fx'> ____________________________ , ____________________________ , ____________________________ </div>";
                     
+                    $_SESSION['cadastro3']    = $rev_iptu->cadastro3;
                     $_SESSION['cadastro4']    = $rev_iptu->cadastro4;
                     $_SESSION['cadastro5']    = $rev_iptu->cadastro5;
-                    $_SESSION['cadastro6']    = $rev_iptu->cadastro6;
                 }
                 
         echo"</div>";
@@ -347,42 +347,49 @@ elseif ($referencia->formName == 'REVISÃO DE IPTU')//gravando em banco
                     <label class='lbl-92 position-absolute'>$rev_iptu->cadastro3</label>
                 ";
                 echo "<div class='linha-fx'>Data _______________________ Cadastros __________________________ , __________________________ </div>";
-                if($rev_iptu->cadastro4 <> '' and $rev_iptu->cadastro5 == '' and $rev_iptu->cadastro6 == '')
+                
+                #Enviando dados para registro em atendimentos
+                $_SESSION['menu']         = $rev_iptu->menu;
+                $_SESSION['Motivo']       = $rev_iptu->Motivo;
+                $_SESSION['UniData']      = $rev_iptu->UniData;
+                $_SESSION['cadastro1']    = $rev_iptu->cadastro1;
+                $_SESSION['cadastro2']    = $rev_iptu->cadastro2;
+
+                if($rev_iptu->cadastro3 <> '' and $rev_iptu->cadastro4 == '' and $rev_iptu->cadastro5 == '')
                 {
                     echo "
-                        <label class='lbl-93 position-absolute'>$rev_iptu->cadastro4</label>
+                        <label class='lbl-83 position-absolute'>$rev_iptu->cadastro3</label>
                     ";
                     echo "<div class='linha-fx'> ____________________________ </div>";
+                    
+                    $_SESSION['cadastro3']    = $rev_iptu->cadastro3;
                 }
-                if($rev_iptu->cadastro4 <> '' and $rev_iptu->cadastro5 <> '' and $rev_iptu->cadastro6 == '')
+                if($rev_iptu->cadastro3 <> '' and $rev_iptu->cadastro4 <> '' and $rev_iptu->cadastro5 == '')
                 {
                     echo "
-                        <label class='lbl-93 position-absolute'>$rev_iptu->cadastro4</label>
-                        <label class='lbl-94 position-absolute'>$rev_iptu->cadastro5</label>
+                        <label class='lbl-83 position-absolute'>$rev_iptu->cadastro3</label>
+                        <label class='lbl-84 position-absolute'>$rev_iptu->cadastro4</label>
                     ";
-                    echo "<div class='linha-fx'> ____________________________ , ____________________________ </div>";  
+                    echo "<div class='linha-fx'> ____________________________ , ____________________________ </div>";
+                    
+                    $_SESSION['cadastro3']    = $rev_iptu->cadastro3;
+                    $_SESSION['cadastro4']    = $rev_iptu->cadastro4;  
                 }
-                if($rev_iptu->cadastro4 <> '' and $rev_iptu->cadastro5 <> '' and $rev_iptu->cadastro6 <> '')
+                if($rev_iptu->cadastro3 <> '' and $rev_iptu->cadastro4 <> '' and $rev_iptu->cadastro5 <> '')
                 {
                     echo "
-                        <label class='lbl-93 position-absolute'>$rev_iptu->cadastro4</label>
-                        <label class='lbl-94 position-absolute'>$rev_iptu->cadastro5</label>
-                        <label class='lbl-95 position-absolute'>$rev_iptu->cadastro6</label>
+                        <label class='lbl-83 position-absolute'>$rev_iptu->cadastro3</label>
+                        <label class='lbl-84 position-absolute'>$rev_iptu->cadastro4</label>
+                        <label class='lbl-85 position-absolute'>$rev_iptu->cadastro5</label>
                     ";
-                    echo "<div class='linha-fx'> ____________________________ , ____________________________ , ____________________________ </div>";   
+                    echo "<div class='linha-fx'> ____________________________ , ____________________________ , ____________________________ </div>";
+                    
+                    $_SESSION['cadastro3']    = $rev_iptu->cadastro3;
+                    $_SESSION['cadastro4']    = $rev_iptu->cadastro4;
+                    $_SESSION['cadastro5']    = $rev_iptu->cadastro5;
                 }
                 
         echo"</div>";
-    
-        #Enviando dados para registro em atendimentos
-        $_SESSION['menu']         = $rev_iptu->menu;
-        $_SESSION['Motivo']       = $rev_iptu->Motivo;
-        $_SESSION['UniData']      = $rev_iptu->UniData;
-        $_SESSION['cadastro2']    = $rev_iptu->cadastro2;
-        $_SESSION['cadastro3']    = $rev_iptu->cadastro3;
-        $_SESSION['cadastro4']    = $rev_iptu->cadastro4;
-        $_SESSION['cadastro5']    = $rev_iptu->cadastro5;
-        $_SESSION['cadastro6']    = $rev_iptu->cadastro6;
     }
 }
 
@@ -409,10 +416,12 @@ elseif ($referencia->formName == 'EMPLACAMENTO') //gravando em banco
         <label class='lbl-108 position-absolute'>$emplacar->alvEmp</label>
         <label class='lbl-109 position-absolute'>$emplacar->aproEmp</label>
         <label class='lbl-110 position-absolute'>$emplacar->areaEmp</label>
-        <br><br><br>
+        <br><br>
         <div class='linha-fx'>Emplacamento  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </div>
         <div class='linha-fx'>Emplacamento Adicional _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </div>
         <div class='linha-fx'>Conforme Alvará _______________     aprovado em _________________     Área construida de _______________ m² </div><br>
+        <label>Obsevações:</label>
+        <div class='linha-fx'><div class='emplac_OBS'>$emplacar->obsEmp</div></div><br>      
     ";
     echo "
         <div class='data'>Leme, ". date('d'). " de ". $mes[date("m")]. " de ". date('Y'). ".</div>
@@ -444,7 +453,7 @@ elseif ($referencia->formName == 'EMPLACAMENTO') //gravando em banco
                 <div class='assNFO'>N.F.O</div>
             </div>
             
-        </div><br>
+        </div>
     ";
     
     #Enviando dados para registro em atendimentos
@@ -453,6 +462,7 @@ elseif ($referencia->formName == 'EMPLACAMENTO') //gravando em banco
     $_SESSION['alvEmp']      = $emplacar->alvEmp;
     $_SESSION['aproEmp']     = $emplacar->aproEmp;
     $_SESSION['areaEmp']     = $emplacar->areaEmp;
+    $_SESSION['obsEmp']      = $emplacar->obsEmp;
     $_SESSION['informacao']  = $informacao;
 }
 elseif ($referencia->formName == 'VALOR VENAL') //gravando em banco

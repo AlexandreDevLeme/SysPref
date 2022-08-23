@@ -6,6 +6,8 @@ session_start();
 
 cabecalho("Logando no sistema de cadastro", "../css/resposta.css","");
 
+$msg = '';
+$timer = 0;
 $login_name = $_POST['user'];
 $senha = $_POST['pass'];
 $_SESSION['nome'] = $login_name;
@@ -29,24 +31,25 @@ if(isset($_SESSION['bdnome']))
     {
     
         unset($_SESSION['bdnome']);
-        unset($_SESSION['bdpassword']);
+        unset($_SESSION['bdpassword']);       
 
-        /*Script para chamar nova pagina*/
-        echo "<script language=\"JavaScript\">
-        window.location=\"../cadgeral.php\";
-        </script>";
-        exit;
+        echo "<div id='err_resposta' class='container'>
+          <img src='../img/Loader.gif' width='50px' height='50px'>";
+        echo "<H2 id='mensagem' value=''></H2>";
+        echo "</div>";
+        
+        echo "<script type='text/javascript' src='../js/timerSucesso.js'></script>";
 
     }else{
 
         session_destroy();
-
+        
         echo "<div id='err_resposta' class='container'>
-            <H2>Nome de usuário ou senha incorretos!<br>Dica: Verificque se não esqueceu algum número ou se a tecla CAPSLOOK esta ativada.</H2><br>";
-            echo "<a href='javascript:window.location=\"../../index.php\";'>
-                <input type='button' value='Voltar a tela de login'></a>";
-            exit;
+            <img src='../img/Loader.gif' width='50px' height='50px' id='loadIMG'>
+            <H2 id='mensagem' value=''></H2><br>";
         echo "</div>";
+
+        echo "<script type='text/javascript' src='../js/timerFalha.js'></script>";
     }
 }else{
 

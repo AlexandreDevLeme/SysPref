@@ -9,8 +9,13 @@ cabecalho("Revisão de IPTU", "../css/formularios.css");
 /*#################### VARIAVEIS PARA ARMAZENAR OS DESTINOS DOS LINKS ####################*/
 /*#### VERIFICANDO A EXISTENCIA DE DADOS PARA PREENCHIMENTO DE RETORNO DAS CONSULTAS #####*/
 
-$motivo = "";
-$anoRef = date('Y', strtotime('-1 Year'));
+if (isset($_SESSION['AnoCarne']) and !empty($_SESSION['AnoCarne'])){
+    $anoRef = $_SESSION['AnoCarne'];
+}elseif (isset($_SESSION['Emitida']) and !empty($_SESSION['Emitida'])){
+    $anoRef = $_SESSION['Emitida'];
+}else{
+    $anoRef = date('Y', strtotime('-1 Year'));
+}
 
 $_SESSION['target'] = "../formularios/revisaoIPTU.php";
 if(isset($_SESSION['bdlogado']))
@@ -19,11 +24,30 @@ if(isset($_SESSION['bdlogado']))
 }else{
     echo "<script>window.location.replace(\"../index.php\")</script>";
 }
+
+$selected = 0;
+
 require "../sqlCon/Consulta_R_I.php";
 /*########################### Dados do requerente ################################*/
 echo "
     <div class='container-fluid'>
 ";
+
+if (isset($_SESSION['reimpressao'])){
+    echo "
+        <input type='text' id='ocultMenu' value='$menu' class='motivo position-absolute'></input>
+        <input type='text' id='ocultAno' value='$ano' class='motivo position-absolute'></input>
+        <input type='text' id='ocultArea' value='$area' class='motivo position-absolute'></input>
+        <input type='text' id='ocultData' value='$data' class='motivo position-absolute'></input>
+        <input type='text' id='ocultAlvara' value='$alvara' class='motivo position-absolute'></input>
+        <input type='text' id='ocultCadastro1' value='$cadastro1' class='motivo position-absolute'></input>
+        <input type='text' id='ocultCadastro2' value='$cadastro2' class='motivo position-absolute'></input>
+        <input type='text' id='ocultCadastro3' value='$cadastro3' class='motivo position-absolute'></input>
+        <input type='text' id='ocultCadastro4' value='$cadastro4' class='motivo position-absolute'></input>
+        <input type='text' id='ocultCadastro5' value='$cadastro5' class='motivo position-absolute'></input>
+    ";
+}
+
     echo "
             <div class='menuSuperior'><!--Botão de acesso ao menu lateral e titulo da tela principal-->
                 <table>
@@ -77,7 +101,7 @@ echo "
                     <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Endereço</span>
                     <input type='text' id='endereco' name='endR' value='$endereco' class='form-control i6 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                     <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Número</span>
-                    <input type='text' id='numero' name='numR' size='5' maxlength='5' value='$numero' class='form-control i7 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                    <input type='text' id='numero' name='numR' size='5' maxlength='5' value='$numero' class='form-control i7 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm' onkeypress='return onlynumber();'>
                     <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Complemento</span>
                     <input type='text' id='complemento' name='complementoR' value='$complemento' class='form-control i000 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 </div>
@@ -109,7 +133,7 @@ echo "
                     <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Rua / Avenida</span>
                     <input type='text' id='rua' name='rua' value='$rua' class='form-control i12 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                     <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Número</span>
-                    <input type='text' id='num' name='num' value='$num' size='5' maxlength='5' class='form-control i13 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                    <input type='text' id='num' name='num' value='$num' size='5' maxlength='5' class='form-control i13 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm' onkeypress='return onlynumber();'>
                     <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Bairro</span>
                     <input type='text' id='vila' name='vila' value='$vila' size='50' maxlength='50' class='form-control i16 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 </div>
@@ -123,7 +147,7 @@ echo "
                     <span class='input-group-text position-static' id='inputGroup-sizing-sm'>N° do Cadastro</span>
                     <input type='text' id='ncad1' name='ncad1' value='$cad' size='16' maxlength='16' class='form-control i19 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                     <span class='input-group-text position-static' id='inputGroup-sizing-sm'>N° do Carnê</span>
-                    <input type='text' id='carne' name='carne' value='' size='6' maxlength='6' class='form-control carne position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                    <input type='text' id='carne' name='carne' value='$carne' size='6' maxlength='6' class='form-control carne position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm' placeholder='N° do carnê' onkeypress='return onlynumber();'>
                     <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Proprietário</span>
                     <input type='text' id='nomeP' name='nome' value='$dono' class='form-control i17 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 </div>
@@ -135,7 +159,7 @@ echo "
         <div class='input-group input-group-sm mb-0 inp8 position-static'>
             <H4 class='titu-carne1 position-static'>Motivo da solicitação:</H4>
                 <select class='form-select iX' id='campoS' name='campoS' onchange=\"OnSelectionChange (this)\">
-                        <option selected></option>
+                        <option $selected></option>
                         <option value='1'>Área no local diferente do constante no carnê de IPTU</option>
                         <option value='2'>Certidão de Construção / Habite-se emitida em $anoRef</option>
                         <option value='3'>Desdobro aprovado em $anoRef</option>
@@ -147,6 +171,7 @@ echo "
                 <button type='button' class='btn btn-outline-light' onClick='Print_Sub()'>IMPRIMIR</button>
             <div class='input-group input-group-sm mb-0 inp1' id='revisao'></div>            
         </div>
+        <script type='text/javascript' src='../js/criaCampos.js'></script>
     </div>
     <input type='text' id='motivo' name='motivo' value='escreva aqui' class='motivo'></input>
     <input type='text' id='formName' name='className' value='REVISÃO DE IPTU' class='motivo'></input>
@@ -154,5 +179,9 @@ echo "
 echo "
     </div>
 ";
+if (isset($_SESSION['reimpressao'])){
+    require "../sqlCon/createField.php";
+}
+
 rodape();
 ?>

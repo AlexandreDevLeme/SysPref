@@ -134,17 +134,17 @@ echo "
             </div>
             <div class='input-group input-group-sm mb-0 inp10 position-static'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Aprovado conforme alvará n°</span>
-                <input type='text' id='canceAlv' name='canceAlv' size='16' maxlength='16' class='form-control j1 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='canceAlv' name='canceAlv' value='$alvara' size='16' maxlength='16' class='form-control j1 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Aprovado em</span>
-                <input type='text' id='cancApr' name='cancApr' size='10' maxlength='10' class='form-control j2 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='cancApr' name='cancApr' value='$data' size='10' maxlength='10' class='form-control j2 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Área aprovada de</span>
-                <input type='text' id='cancArea' name='cancArea' size='16' maxlength='16' class='form-control j3 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='cancArea' name='cancArea' value='$area' size='16' maxlength='16' class='form-control j3 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text position-static j3a' id='inputGroup-sizing-sm'> m²</span>
             </div>
             
             <div class='input-group input-group-sm mb-0 inp11 position-static'>
                 <div class='form-floating'>
-                    <textarea class='form-control k4 position-static' name='coments' id='floatingTextarea2 comentarios' style='height: 100px'></textarea>
+                    <textarea class='form-control k4 position-static' name='coments' id='floatingTextarea2 comentarios' style='height: 100px'>$obs</textarea>
                     <label for='floatingTextarea2'>Observações</label>
                 </div>                                   
             </div>

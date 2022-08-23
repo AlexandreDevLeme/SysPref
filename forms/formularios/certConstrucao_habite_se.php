@@ -132,26 +132,29 @@ echo "
             </div>
             <div class='input-group input-group-sm mb-0 inp10 position-static'>
                 <div class='form-check'>
-                    <input class='form-check-input' type='checkbox' name='con_hab_chk1' value='X' id='flexCheckDefault'>
+                    <input class='form-check-input' type='checkbox' name='con_hab_chk1' value='X' id='con_hab_chk1' $projeto onclick=\"marcaDesmarca(this)\">
                     <label class='form-check-label chk1' for='flexCheckDefault'>Marque se existir um Projeto</label>
                 </div>
                 <input type='text' id='motivo' name='className' value='CONSTRUÇÃO/HABITE-SE' class='motivo'></input>
                 <div class='form-check'>
-                    <input class='form-check-input' type='checkbox' name='con_hab_chk2' value='X' id='flexCheckDefault'>
+                    <input class='form-check-input' type='checkbox' name='con_hab_chk2' value='X' id='con_hab_chk1' $requerimento onclick=\"marcaDesmarca(this)\">
                     <label class='form-check-label chk2' for='flexCheckDefault'>Marque se existir um Requerimento de 40 mts²</label>
                 </div>
+                <script type='text/javascript' src='../js/ativaCheckBox.js'></script>
+                <div class='input-group input-group-sm mb-0 habconst-camp position-static'>   
                     <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Data da aprovação</span>
-                    <input type='text' id='data-alvHabit' name='data_alvHabit' size='10' maxlength='10' class='form-control k1 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                    <input type='text' id='data-alvHabit' name='data_alvHabit' value='$data' size='10' maxlength='10' class='form-control k1 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                     <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Alvará</span>
-                    <input type='text' id='alvHabit' name='alvHabit' size='16' maxlength='16' class='form-control k2 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                    <input type='text' id='alvHabit' name='alvHabit' value='$alvara' size='16' maxlength='16' class='form-control k2 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                     <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Área aprovada</span>
-                    <input type='text' id='areaHabit' name='areaHabit' size='16' maxlength='16' class='form-control k3 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                    <input type='text' id='areaHabit' name='areaHabit' value='$area' size='16' maxlength='16' class='form-control k3 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                     <span class='input-group-text position-static k3a' id='inputGroup-sizing-sm'> m²</span>
                     <button type='button' class='btn btn-outline-light habitPos' onClick=\"Print_Sub()\">IMPRIMIR</button>
+                </div>
             </div>
             <div class='input-group input-group-sm mb-0 inp11 position-static'>
                 <div class='form-floating'>
-                    <textarea class='form-control k4 position-static' name='coments' id='floatingTextarea2 comentarios' style='height: 100px'></textarea>
+                    <textarea class='form-control k4 position-static' name='coments' id='floatingTextarea2 comentarios' style='height: 100px'>$obs</textarea>
                     <label for='floatingTextarea2'>Observações</label>
                 </div>
             </div>

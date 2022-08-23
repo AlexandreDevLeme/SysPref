@@ -12,6 +12,8 @@ if (isset($_SESSION['Imovel'])){
     LimpaRequerente();
 }
 
+ClearSQLTempData();
+
 /*########################################################################################*/
 /*#################### VARIAVEIS PARA ARMAZENAR OS DESTINOS DOS LINKS ####################*/
 /*#### VERIFICANDO A EXISTENCIA DE DADOS PARA PREENCHIMENTO DE RETORNO DAS CONSULTAS #####*/
@@ -52,7 +54,7 @@ echo "
                                 <li><a href='formularios/certEmplacamento.php'>Certidão de Emplacamento</a></li>
                                 <li><a href='formularios/certFichaCad.php'>Certidão de Ficha Cadastral</a></li>
                                 <li><a href='formularios/certLadodoImovel.php'>Certidão de Lado do Imóvel</a></li>
-                                <li><a href='formularios/certMedInLoco.php'>Certidão de Medição / Verificação in Loco</a></li>
+                                <li><a href='formularios/certMedInLoco.php'>Medição / Verificação in Loco</a></li>
                                 <li><a href='formularios/certRenCertDesdobro.php'>Certidão de Renovação da Certidão de Desdobro</a></li>
                                 <li><a href='formularios/certRenCopiaAlvara.php'>Certidão de Renovação do Alvará de Constução</a></li>
                                 <li><a href='formularios/revisaoIPTU.php'>Certidão de Revisão de IPTU</a></li>

@@ -129,32 +129,32 @@ echo "
             <div class='input-group input-group-sm mb-0 inp9 position-static'>    
                 <h4 class='titleB'>Dados da alteração cadastral</h4>
                 <span class='input-group-text buscaCEP3 position-static' id='inputGroup-sizing-sm'>Buscar novo endereço por CEP</span>
-                <input type='text' id='buscaCEPX' name='buscaCEPX' size='20' maxlength='10' class='form-control d1 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='buscaCEPX' name='buscaCEPX' value='$cepN' size='20' maxlength='10' class='form-control d1 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
             </div>
             <div class='input-group input-group-sm mb-0 inp10 position-static'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Novo Proprietário/Responsável</span>
-                <input type='text' id='nomeR' name='nomeN' class='form-control d2 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='nomeR' name='nomeN' value='$nomeN' class='form-control d2 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
             </div>
             <div class='input-group input-group-sm mb-0 inp11 position-static'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>N° do CPF</span>
-                <input type='text' id='cpf3' name='cpfN' size='14' maxlength='14' class='form-control d3 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='cpf3' name='cpfN' value='$cpfN' size='14' maxlength='14' class='form-control d3 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>N° do RG</span>
-                <input type='text' id='rg3' name='rgN' size='12' maxlength='12' class='form-control d4 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='rg3' name='rgN' value='$rgN' size='12' maxlength='12' class='form-control d4 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
             </div>
             <div class='input-group input-group-sm mb-0 inp12 position-static'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Endereço Tributário</span>
-                <input type='text' id='enderecoN' name='endN' class='form-control d5 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='enderecoN' name='endN' value='$enderecoN' class='form-control d5 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Número</span>
-                <input type='text' id='numeroN' name='numN' size='5' maxlength='5' class='form-control d6 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='numeroN' name='numN' value='$numeroN' size='5' maxlength='5' class='form-control d6 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Bairro</span>
-                <input type='text' id='bairroN' name='bairroN' class='form-control d7 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='bairroN' name='bairroN' value='$bairroN' class='form-control d7 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
             </div>
             <div class='input-group input-group-sm mb-0 inp13 position-static'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Cidade</span>
-                <input type='text' id='cidadeN' name='cidN' class='form-control d8 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='cidadeN' name='cidN' value='$cidN' class='form-control d8 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <label class='input-group-text position-static' for='inputGroupSelect02 ufCad'>Estado</label>
                 <select class='form-select d9 position-static' id='inputGroupSelect02' name='ufN'>
-                    <option selected></option>
+                    <option selected>$ufN</option>
                     <option value='AC'>Acre</option>
                     <option value='AL'>Alagoas</option>
                     <option value='AP'>Amapá</option>
@@ -187,7 +187,7 @@ echo "
             </div>
             <div class='input-group input-group-sm mb-0 inp11 txtArea2 position-static'>
                 <div class='form-floating'>
-                    <textarea class='form-control k4 position-static' name='coments' id='floatingTextarea2 comentarios' style='height: 100px'></textarea>
+                    <textarea class='form-control k4 position-static' name='coments' id='floatingTextarea2 comentarios' style='height: 100px'>$obs</textarea>
                     <label for='floatingTextarea2'>Observações</label>
                 </div>
                 <div id='buttonPRT'><button type='button' class='btn btn-outline-light atualPos' onClick=\"Print_Sub()\">IMPRIMIR</button></div>
@@ -196,7 +196,6 @@ echo "
             <script type=\"text/javascript\">
             $(\"#buscaCEPX\").focusout(function(){
                 //Início do Comando AJAX
-                alert('teste');
                 $.ajax({
                     //O campo URL diz o caminho de onde virá os dados
                     //É importante concatenar o valor digitado no CEP
@@ -230,3 +229,8 @@ echo "
 ";
 rodape();
 ?>
+        
+        
+        
+        
+        

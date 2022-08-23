@@ -132,22 +132,28 @@ echo "
                 </div>
             </div>
             <div class='form-check'>
-                <input class='form-check-input' type='checkbox' name='emplac_chk1' value='X' id='flexCheckDefault markchk1emp'>
+                <input class='form-check-input' type='checkbox' name='emplac_chk1' value='X' id='flexCheckDefault markchk1emp' $checkEmp>
                 <label class='form-check-label empchk1' for='flexCheckDefault'>Emplacamento</label>
             </div>
             <div class='form-check'>
-                <input class='form-check-input' type='checkbox' name='emplac_chk2' value='X' id='flexCheckDefault markchk2emp'>
+                <input class='form-check-input' type='checkbox' name='emplac_chk2' value='X' id='flexCheckDefault markchk2emp $checkEmpAdd'>
                 <label class='form-check-label empchk2' for='flexCheckDefault'>Emplacamento Adicional</label>
             </div>
             <div class='input-group input-group-sm mb-0 inp10 position-static'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Construido conforme alvará n°</span>
-                <input type='text' id='alvEmp' name='alvEmp' size='16' maxlength='16' class='form-control m1 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='alvEmp' name='alvEmp' value='$alvara' size='16' maxlength='16' class='form-control m1 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Aprovado em</span>
-                <input type='text' id='aproEmp' name='aproEmp' size='10' maxlength='10' class='form-control m2 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='aproEmp' name='aproEmp' value='$data' size='10' maxlength='10' class='form-control m2 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text position-static' id='inputGroup-sizing-sm'>Área construida de</span>
-                <input type='text' id='areaEmp' name='areaEmp' size='16' maxlength='16' class='form-control m3 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
+                <input type='text' id='areaEmp' name='areaEmp' value='$area' size='16' maxlength='16' class='form-control m3 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <span class='input-group-text position-static r4b' id='inputGroup-sizing-sm'> m²</span>
                 <button type='button' class='btn btn-outline-light' onClick=\"Print_Sub()\">IMPRIMIR</button>
+            </div>
+            <div class='input-group input-group-sm mb-0 inp11 txtArea2 position-static'>
+                <div class='form-floating'>
+                    <textarea class='form-control k4 position-static' name='coments' id='floatingTextarea2 comentarios' style='height: 100px'>$obs</textarea>
+                    <label for='floatingTextarea2'>Observações</label>
+                </div>
             </div>
         </div>
         <input type='text' id='motivo' name='className' value='EMPLACAMENTO' class='motivo'></input>

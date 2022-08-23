@@ -48,6 +48,7 @@
     }
     #npVision{
         visibility: hidden;
+        border: 1px solid gold;
      }
     /*###################### Menu Superior ###################*/
     .container-fluid .menuSuperior{ /*AJUSTADO*/
@@ -769,7 +770,10 @@
 }
 .chk2{
     color: white;
-    margin-right: 950px;
+    margin-right: 150px;
+}
+.habconst-camp{
+    margin-left: -5px;
 }
 /*################################ Campos do Cancelamento de Alvará ###########################################*/
 .cancAl{

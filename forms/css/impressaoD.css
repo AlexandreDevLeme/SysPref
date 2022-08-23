@@ -196,7 +196,7 @@
     border: 1px solid black;
     width: 70px;
     height: 20px;
-    margin-top: 72px;
+    margin-top: 48px;
     margin-left: 675px;
     text-align: center;
     font-weight: bold;
@@ -205,26 +205,26 @@
     border: 1px solid black;
     width: 70px;
     height: 20px;
-    margin-top: 96px;
+    margin-top: 72px;
     margin-left: 675px;
     text-align: center;
     font-weight: bold;
 }
 .lbl-108{
     width: 121px;
-    margin-top: 120px;
+    margin-top: 96px;
     margin-left: 114px;
     text-align: center;
 }
 .lbl-109{
     width: 138px;
-    margin-top: 120px;
+    margin-top: 96px;
     margin-left: 325px;
     text-align: center;
 }
 .lbl-110{
     width: 120px;
-    margin-top: 120px;
+    margin-top: 96px;
     margin-left: 591px;
     text-align: center;
 }
@@ -241,4 +241,9 @@
 .quadro_emplac_nfo .recuo{
     margin-left: 5px;
     margin-right: 5px;
+}
+.linha-fx .emplac_OBS{
+    width: 750px;
+    word-break: break-all;
+    border-radius: 3%;
 }

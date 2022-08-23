@@ -13,21 +13,22 @@ cabecalho("Inserindo novos dados no Banco", "../css/resposta.css");
 
 //Recebendo valores do formulario.
 if (isset($_SESSION['Requerente'])) {
-    $codigoRef = $_SESSION['Requerente'];
-    $nome      = $_SESSION['nome'];
-    $cpf       = $_SESSION['cpf'];
-    $rg        = $_SESSION['rg'];
-    $telefone  = $_SESSION['tel'];
-    $celular   = $_SESSION['cel'];
-    $endereco  = $_SESSION['end'];
-    $numero    = $_SESSION['num'];
-    $bairro    = $_SESSION['bairro'];
-    $cep       = $_SESSION['cep'];
-    $cidade    = $_SESSION['cid'];
-    $estado    = $_SESSION['uf'];
+    $codigoRef   = $_SESSION['Requerente'];
+    $nome        = $_SESSION['nome'];
+    $cpf         = $_SESSION['cpf'];
+    $rg          = $_SESSION['rg'];
+    $telefone    = $_SESSION['tel'];
+    $celular     = $_SESSION['cel'];
+    $endereco    = $_SESSION['end'];
+    $numero      = $_SESSION['num'];
+    $complemento = $_SESSION['complemento'];
+    $bairro      = $_SESSION['bairro'];
+    $cep         = $_SESSION['cep'];
+    $cidade      = $_SESSION['cid'];
+    $estado      = $_SESSION['uf'];
 
     //Prepara o caminho para excluir
-    $comando = "UPDATE requerente set nome=:nome, cpf=:cpf, rg=:rg, tel=:telefone, cel=:celular, endereco=:endereco, numero=:numero, bairro=:bairro, cep=:cep, cidade=:cidade, estado=:estado where id_Requerente=:codigoRef";
+    $comando = "UPDATE requerente set nome=:nome, cpf=:cpf, rg=:rg, tel=:telefone, cel=:celular, endereco=:endereco, numero=:numero, complemento=:complemento, bairro=:bairro, cep=:cep, cidade=:cidade, estado=:estado where id_Requerente=:codigoRef";
     $update = $pdo->prepare($comando);
 
     //Vincula o label com a variável
@@ -39,6 +40,7 @@ if (isset($_SESSION['Requerente'])) {
     $update->bindValue(':celular', $celular);
     $update->bindValue(':endereco', $endereco);
     $update->bindValue(':numero', $numero);
+    $update->bindValue(':complemento', $complemento);
     $update->bindValue(':bairro', $bairro);
     $update->bindValue(':cep', $cep);
     $update->bindValue(':cidade', $cidade);

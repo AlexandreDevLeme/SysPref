@@ -6,8 +6,17 @@
 
     cabecalho("Redirecionamento", "../css/resposta.css");
 
-    
-    $paginaAlvo = $_SESSION['target'];//SELECIONA O DIRETÓRIO DO ARQUIVO QUE SOLICITOU UMA AÇÃO DA ROTA
+    //GERA O SPLASH PARA ANIMAÇÃO DA TELA DE CARREGAMENTO DE DADOS.
+    echo "<div id='err_resposta' class='container'>
+          <img src='../img/Loader.gif' width='50px' height='50px'>
+          <H2>Aguarde...Carregando.</H2>
+          </div>
+    ";
+
+    if(isset($_SESSION['target']))//SELECIONA O DIRETÓRIO DO ARQUIVO QUE SOLICITOU UMA AÇÃO DA ROTA
+    {
+        $paginaAlvo = $_SESSION['target'];
+    }
 
     if(!empty($_POST['cpfR'])){//PREENCHE OS CAMPOS DO FORMULARIO PARA EDIÇÃO DE CADASTRO DE REQUERENTE
         $nome = $_POST['nomeR'];
@@ -143,6 +152,258 @@
                     exit;
             echo "</div>";
         }
+    }elseif(isset($_GET['codigoPrint'])){ //CARREGA OS DADOS DA REIMPRESSÃO NO FORMULARIO PARA POSSIBILITAR EDIÇÃO
+        $carga = $_GET['codigoPrint'];
+
+        $_SESSION['reimpressao'] = 'RE-IMPRIMIR';
+
+        $recarga = $pdo->prepare("SELECT * FROM atendimentos WHERE num_doc = :carga");
+        $recarga->bindValue(':carga', $carga);
+        $recarga->execute();
+
+        while ($row = $recarga->fetch(PDO::FETCH_ASSOC)){
+            //sleep(1);
+            if ($row['documento'] == 'AMPLIAÇÃO')
+            {
+                $_SESSION['docPrint']       = 'AMPLIAÇÃO';
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $_SESSION['conforme']       = $row['conf_alvara'];
+                $convertDate = substr($row['data_aprov'], 8, 2).'/'.substr($row['data_aprov'], 5, 2).'/'.substr($row['data_aprov'], 0, 4);
+                $_SESSION['data']           = $convertDate;
+                $_SESSION['fase1']          = $row['const_fase1'];
+                $_SESSION['aumento']        = $row['const_add'];
+                $_SESSION['total']          = $row['area_const'];
+                $_SESSION['obs']            = $row['obs'];
+                $paginaAlvo                 = '../formularios/ampliacao.php';
+
+            }elseif ($row['documento'] == 'ATUALIZAÇÃO DOS DADOS CADASTRAIS')
+            {
+                $_SESSION['docPrint']       = 'ATUALIZAÇÃO DOS DADOS CADASTRAIS';
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $_SESSION['nomeN']          = $row['alterar_para'];
+                $_SESSION['cpfN']           = $row['cpf_t'];
+                $_SESSION['rgN']            = $row['rg_t'];
+                $_SESSION['endN']           = $row['end_t'];
+                $_SESSION['numN']           = $row['numero_t'];
+                $_SESSION['bairroN']        = $row['bairro_t'];
+                $_SESSION['cepN']           = $row['cep_t'];
+                $_SESSION['cidadeN']        = $row['cidade_t'];
+                $_SESSION['estadoN']        = $row['estado_t'];
+                $_SESSION['obs']            = $row['obs'];
+                $paginaAlvo                 = '../formularios/atualizacaoCad.php';
+
+            }elseif ($row['documento'] == 'B.C.I. (BOLETIM DO CADASTRAMENTO DE IMÓVEIS)')
+            {
+                $_SESSION['docPrint']       = 'B.C.I. (BOLETIM DO CADASTRAMENTO DE IMÓVEIS)';
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $paginaAlvo                 = '../formularios/bci.php';
+
+            }elseif ($row['documento'] == 'BUSCAS DE IPTU')
+            {
+                $_SESSION['docPrint']       = 'BUSCAS DE IPTU';
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $_SESSION['ano']            = $row['ano'];
+                $paginaAlvo                 = '../formularios/buscaIPTU.php';
+
+            }elseif ($row['documento'] == 'CANCELAMENTO DE ALVARÁ')
+            {
+                $_SESSION['docPrint']       = 'CANCELAMENTO DE ALVARÁ';
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $_SESSION['canceAlv']       = $row['conf_alvara'];
+                $convertDate = substr($row['data_aprov'], 8, 2).'/'.substr($row['data_aprov'], 5, 2).'/'.substr($row['data_aprov'], 0, 4);
+                $_SESSION['cancApr']        = $convertDate;
+                $_SESSION['cancArea']       = $row['area_const'];
+                $_SESSION['coments']        = $row['obs'];
+                $paginaAlvo                 = '../formularios/cancelamentoAlvara.php'; 
+
+            }elseif ($row['documento'] == 'CONFRONTANTES')
+            {
+                $_SESSION['docPrint']       = 'CONFRONTANTES';
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $paginaAlvo                 = '../formularios/confrontantes.php';
+
+            }elseif ($row['documento'] == 'CONSTRUÇÃO/HABITE-SE')
+            {
+                $_SESSION['docPrint']       = 'CONSTRUÇÃO/HABITE-SE';
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $_SESSION['projeto']        = $row['check_box1'];
+                $_SESSION['requerimento']   = $row['check_box2'];
+                $convertDate = substr($row['data_aprov'], 8, 2).'/'.substr($row['data_aprov'], 5, 2).'/'.substr($row['data_aprov'], 0, 4);
+                $_SESSION['dataAprov']      = $convertDate;
+                $_SESSION['alvara']         = $row['conf_alvara'];
+                $_SESSION['areaAprov']      = $row['area_const'];
+                $_SESSION['obs']            = $row['obs'];
+                $paginaAlvo                 = '../formularios/certConstrucao_habite_se.php';
+
+            }elseif ($row['documento'] == 'CÓPIA DO ALVARÁ DE CONSTRUÇÃO')
+            {
+                $_SESSION['docPrint']       = 'CÓPIA DO ALVARÁ DE CONSTRUÇÃO';
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $_SESSION['projeto']        = $row['projeto_numero'];
+                $_SESSION['alvNum']         = $row['conf_alvara'];
+                $convertDate = substr($row['data_aprov'], 8, 2).'/'.substr($row['data_aprov'], 5, 2).'/'.substr($row['data_aprov'], 0, 4);
+                $_SESSION['aproData']       = $convertDate;
+                $paginaAlvo                 = '../formularios/copiaAlvara.php';
+
+            }elseif ($row['documento'] == 'DEMOLIÇÃO')
+            {
+                $_SESSION['docPrint']       = 'DEMOLIÇÃO';
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $convertDate = substr($row['data_aprov'], 8, 2).'/'.substr($row['data_aprov'], 5, 2).'/'.substr($row['data_aprov'], 0, 4);
+                $_SESSION['aproDem']        = $convertDate;
+                $_SESSION['alvDem']         = $row['conf_alvara'];
+                $_SESSION['areaDem']        = $row['area_const'];
+                $paginaAlvo                 = '../formularios/certDemolicao.php';
+
+            }elseif ($row['documento'] == 'DENOMINAÇÃO DE RUA')
+            {
+                $_SESSION['docPrint']       = 'DENOMINAÇÃO DE RUA';
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $_SESSION['den_ruaAntiga']  = $row['rua_antiga'];
+                $_SESSION['den_ruaAtual']   = $row['rua_atual'];
+                $_SESSION['den_bairro']     = $row['bairro_x'];
+                $_SESSION['coments']        = $row['obs'];
+                $paginaAlvo                 = '../formularios/certDenominacaoRua.php';
+
+            }elseif ($row['documento'] == 'EMPLACAMENTO')
+            {
+                $_SESSION['docPrint']       = 'EMPLACAMENTO';
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $_SESSION['emplac_chk1']    = $row['check_box1'];
+                $_SESSION['emplac_chk2']    = $row['check_box2'];
+                $_SESSION['alvEmp']         = $row['conf_alvara'];
+                $convertDate = substr($row['data_aprov'], 8, 2).'/'.substr($row['data_aprov'], 5, 2).'/'.substr($row['data_aprov'], 0, 4);
+                $_SESSION['aproEmp']        = $convertDate;
+                $_SESSION['areaEmp']        = $row['area_const'];
+                $_SESSION['obsEmp']         = $row['obs'];
+                $paginaAlvo                 = '../formularios/certEmplacamento.php';
+
+            }elseif ($row['documento'] == '')
+            {
+                $_SESSION['docPrint']       = 'CONFRONTANTES';
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $paginaAlvo                 = '../formularios/confrontantes.php';
+
+            }elseif ($row['documento'] == '')
+            {
+                $_SESSION['docPrint']       = 'CONFRONTANTES';
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $paginaAlvo                 = '../formularios/confrontantes.php';
+
+            }elseif ($row['documento'] == '')
+            {
+                $_SESSION['docPrint']       = 'CONFRONTANTES';
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $paginaAlvo                 = '../formularios/confrontantes.php';
+
+            }elseif ($row['documento'] == '')
+            {
+                $_SESSION['docPrint']       = 'CONFRONTANTES';
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $paginaAlvo                 = '../formularios/confrontantes.php';
+
+            }elseif ($row['documento'] == '')
+            {
+                $_SESSION['docPrint']       = 'CONFRONTANTES';
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $paginaAlvo                 = '../formularios/confrontantes.php';
+
+            }elseif ($row['documento'] == 'REVISÃO DE IPTU')// revisão de iptu
+            {
+                $_SESSION['docPrint']       = 'REVISÃO DE IPTU';
+                $_SESSION['carne']          = $row['n_carne'];
+                $_SESSION['codigoMantido']  = $row['num_doc'];
+                $_SESSION['cpf']            = $row['cpf'];
+                $_SESSION['cadastro']       = $row['n_cad'];
+                $_SESSION['menu']           = $row['menu'];                
+                $_SESSION['Motivo']         = $row['motivo'];
+                $_SESSION['carne']          = $row['n_carne'];
+
+                if ($row['menu'] == '1')
+                {
+                    $_SESSION['AreaCarne']  = $row['area_no_carne'];
+                    $_SESSION['AnoCarne']   = $row['desde'];
+                }elseif ($row['menu'] == '2')
+                {
+                    $_SESSION['Emitida']    = $row['desde'];
+                    $_SESSION['Areade']     = $row['area_aprov'];
+                }elseif ($row['menu'] == '3')
+                {
+                    $convertDate = substr($row['data_aprov'], 8, 2).'/'.substr($row['data_aprov'], 5, 2).'/'.substr($row['data_aprov'], 0, 4);
+                    $_SESSION['DesData']      = $convertDate;
+                    $_SESSION['cadastro1']    = $row['cad_1'];
+                    $_SESSION['cadastro2']    = $row['cad_2'];
+                    $_SESSION['cadastro3']    = $row['cad_3'];
+                    $_SESSION['cadastro4']    = $row['cad_4'];
+                    $_SESSION['cadastro5']    = $row['cad_5'];      
+                }elseif ($row['menu'] == '4')
+                {
+                    $_SESSION['n_alv']      = $row['conf_alvara'];
+                    $convertDate = substr($row['data_aprov'], 8, 2).'/'.substr($row['data_aprov'], 5, 2).'/'.substr($row['data_aprov'], 0, 4);
+                    $_SESSION['proj_data']  = $convertDate;
+                    $_SESSION['area_Proj']  = $row['area_aprov']; 
+                }elseif ($row['menu'] == '5')
+                {
+                            
+                }elseif ($row['menu'] == '6')
+                {
+                    $convertDate = substr($row['data_aprov'], 8, 2).'/'.substr($row['data_aprov'], 5, 2).'/'.substr($row['data_aprov'], 0, 4);
+                    $_SESSION['UniData']      = $convertDate;
+                    $_SESSION['cadastro1']    = $row['cad_1'];
+                    $_SESSION['cadastro2']    = $row['cad_2'];
+                    $_SESSION['cadastro3']    = $row['cad_3'];
+                    $_SESSION['cadastro4']    = $row['cad_4'];
+                    $_SESSION['cadastro5']    = $row['cad_5'];      
+                }
+                
+                $paginaAlvo = '../formularios/revisaoIPTU.php';
+
+            }
+        }
+        
+        echo "<script>window.location.replace(\"$paginaAlvo\")</script>";
+        exit;
+    }elseif (!empty($_POST['text']) || !empty($_POST['FillCamp']))//PROCESSA OF FILTROS PARA CONSULTA DE ATENDIMENTOS ANTERIORES
+    {
+        $paginaAlvo               = '../act/reg_atendimento.php';
+
+        $_SESSION['FiltrarTable'] = $_POST['text'];
+        $_SESSION['palavra']      = $_POST['FillCamp'];
+
+        echo "<script>window.location.replace(\"$paginaAlvo\")</script>";
+        exit;        
     }
 
     /* ############################################################################################################################ */
@@ -192,7 +453,7 @@
         </script>";
         exit;
 
-    }else{
+    }else{ //RETORNA UMA MENSAGEM DE ERRO CASO NÃO SEJA POSSIVEL IDENTIFICAR A SOLICITAÇÃO
         echo "<h1>Nenhum código foi enviado!!!</h1>";
     }
 
