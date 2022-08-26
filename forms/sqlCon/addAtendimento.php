@@ -1,7 +1,5 @@
 <?php
 
-require_once "../sqlCon/conect.php";
-
 session_start();
 
 if($_SESSION['gravarDados'] == 'GRAVAR')
@@ -31,7 +29,11 @@ if($_SESSION['gravarDados'] == 'GRAVAR')
         $estado         = $_SESSION['new_estado'];
         $telefone       = $_SESSION['new_tel'];
         $celular        = $_SESSION['new_cel'];
+        
+        require "./verificaRequerente.php";
     }
+
+    sleep(1);
 
     if(!empty($_SESSION['new_Rua']))
     {
@@ -55,6 +57,7 @@ if($_SESSION['gravarDados'] == 'GRAVAR')
             $im_Proprietario = '';
         }
 
+        require "./verificaImovel.php";
     }
 
     if(isset($_SESSION['className']) and $_SESSION['className'] == 'AMPLIAÇÃO')//reimpressão ok
@@ -1318,7 +1321,7 @@ if($_SESSION['gravarDados'] == 'GRAVAR')
         unset($_SESSION['new_Proprietario']);
     }
 
-    elseif(isset($_SESSION['className']) and $_SESSION['className'] == 'CÓPIA DO ALVARÁ DE CONSTRUÇÃO')//reimpressão ok
+    elseif(isset($_SESSION['className']) and $_SESSION['className'] == 'CÓPIA DE PROJETO')//reimpressão ok
     {
         $convertDate = substr($_SESSION['aproData'], 6, 4).'/'.substr($_SESSION['aproData'], 3, 2).'/'.substr($_SESSION['aproData'], 0, 2);
 
@@ -1326,7 +1329,7 @@ if($_SESSION['gravarDados'] == 'GRAVAR')
         $dataDeAprovacao = $_SESSION['alvNum'];
         $areaConstruida  = $convertDate;
         
-        $documento  = 'CÓPIA DO ALVARÁ DE CONSTRUÇÃO';
+        $documento  = 'CÓPIA DE PROJETO';
         
         if(isset($_SESSION['reimpressao']))
         {
@@ -2390,6 +2393,7 @@ if($_SESSION['gravarDados'] == 'GRAVAR')
         $regUpdate = $pdo->prepare("UPDATE atendimentofinal SET registro = :newCod WHERE id_Final = 1");
         $regUpdate->bindValue(':newCod', $newCod);
         $regUpdate->execute();
+
     }
 
     unset($_SESSION['gravarDados']);

@@ -48,7 +48,7 @@ echo "
                                 <li><a href='formularios/cancelamentoAlvara.php'>Certidão de Cancelamento de Alvará</a></li>
                                 <li><a href='formularios/confrontantes.php'>Certidão de Confrontantes</a></li>
                                 <li><a href='formularios/certConstrucao_habite_se.php'>Certidão de Construção / Habite-se</a></li>
-                                <li><a href='formularios/copiaAlvara.php'>Certidão de Cópia do Alvará de Constução</a></li>
+                                <li><a href='formularios/copiaAlvara.php'>Cópia de Projeto</a></li>
                                 <li><a href='formularios/certDemolicao.php'>Certidão de Demolição</a></li>
                                 <li><a href='formularios/certDenominacaoRua.php'>Certidão de Denominação de Rua</a></li>
                                 <li><a href='formularios/certEmplacamento.php'>Certidão de Emplacamento</a></li>

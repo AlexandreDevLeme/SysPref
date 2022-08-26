@@ -249,9 +249,9 @@
                 $_SESSION['obs']            = $row['obs'];
                 $paginaAlvo                 = '../formularios/certConstrucao_habite_se.php';
 
-            }elseif ($row['documento'] == 'CÓPIA DO ALVARÁ DE CONSTRUÇÃO')
+            }elseif ($row['documento'] == 'CÓPIA DE PROJETO')
             {
-                $_SESSION['docPrint']       = 'CÓPIA DO ALVARÁ DE CONSTRUÇÃO';
+                $_SESSION['docPrint']       = 'CÓPIA DE PROJETO';
                 $_SESSION['codigoMantido']  = $row['num_doc'];
                 $_SESSION['cpf']            = $row['cpf'];
                 $_SESSION['cadastro']       = $row['n_cad'];

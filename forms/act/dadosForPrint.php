@@ -172,7 +172,7 @@ elseif ($referencia->formName == 'CONSTRUÇÃO/HABITE-SE') //gravando em banco
     $_SESSION['obs']          = $const_habite->obs;        
 }
 
-elseif ($referencia->formName == 'CÓPIA DO ALVARÁ DE CONSTRUÇÃO') //gravando em banco
+elseif ($referencia->formName == 'CÓPIA DE PROJETO') //gravando em banco
 {
     echo "
         <label class='lbl-77 position-absolute'>$copiadoAlv->projeto</label>

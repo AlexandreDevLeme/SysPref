@@ -234,7 +234,7 @@ class renUnificacao
         }
 
         //DADOS PARA IMPRESSÃO DE FORMULÁRIOS EM BRANCO E/OU TRATAMENTO DE ERROS
-        if ($_POST['nomeR'] == '' and $_POST['cpfR'] == '' and $_POST['rgR'] == '' and $_POST['endR'] == '' and $_POST['numR'] == '' and $_POST['bairroR'] == '' and $_POST['cidR'] == '' and $_POST['ufR'] == '' and $_POST['telR'] == "" and $_POST['celR'] == "")
+        if ($_POST['nomeR'] == '' and $_POST['cpfR'] == '' and $_POST['rgR'] == '' and $_POST['endR'] == '' and $_POST['numR'] == '' and $_POST['complementoR'] == '' and $_POST['bairroR'] == '' and $_POST['cidR'] == '' and $_POST['ufR'] == '' and $_POST['telR'] == "" and $_POST['celR'] == "")
         {
             $_SESSION['gravarDados'] = 'NÃO GRAVAR';
 
@@ -268,6 +268,20 @@ class renUnificacao
                 $Contribuinte->req_Contato = ' ';
             }
         }
+
+        $_SESSION['new_nome']       = $_POST['nomeR'];
+        $_SESSION['new_cpf']        = $_POST['cpfR'];
+        $_SESSION['new_rg']         = $_POST['rgR'];
+        $_SESSION['new_tel']        = $_POST['telR'];
+        $_SESSION['new_cel']        = $_POST['celR'];
+        $_SESSION['new_end']        = $_POST['endR'];
+        $_SESSION['new_num']        = $_POST['numR'];
+        $_SESSION['new_complemento']= $_POST['complementoR'];
+        $_SESSION['new_bairro']     = $_POST['bairroR'];
+        $_SESSION['new_cep']        = "00.000-000";
+        $_SESSION['new_cidade']     = $_POST['cidR'];
+        $_SESSION['new_estado']     = $_POST['ufR']; 
+
     //#####################################################################################################################################
     //Estanciando Imóvel
     $Residencia = new Imovel;
@@ -327,6 +341,14 @@ class renUnificacao
         }else{
             $Residencia->im_Proprietario = ' ';  
         }
+
+        $_SESSION['new_Rua']          = $_POST['rua'];
+        $_SESSION['new_Numero']       = $_POST['num'];
+        $_SESSION['new_Bairro']       = $_POST['vila'];
+        $_SESSION['new_Lote']         = $_POST['lote'];
+        $_SESSION['new_Quadra']       = $_POST['quadra'];
+        $_SESSION['new_Cadastro']     = $_POST['ncad1'];
+        $_SESSION['new_Proprietario'] = $_POST['nome'];
 
 //#########################################################################################################################################
 //Criando Objetos e seus atributos
@@ -802,7 +824,7 @@ elseif(isset($_POST['className']) and $_POST['className'] == 'CONSTRUÇÃO/HABIT
     $referencia->formObs = 'O pagamento da taxa na Secretaria de Finanças é indispensável para a conclusão desta solicitação';
 }
 
-elseif(isset($_POST['className']) and $_POST['className'] == 'CÓPIA DO ALVARÁ DE CONSTRUÇÃO')//concluido
+elseif(isset($_POST['className']) and $_POST['className'] == 'CÓPIA DE PROJETO')//concluido
 {
     $copiadoAlv = new copiaAlvara;
     

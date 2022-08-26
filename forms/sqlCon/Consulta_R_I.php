@@ -257,7 +257,7 @@ if (isset($_SESSION['reimpressao']))//carregar dados para reimpressão
             $area         = $_SESSION['areaAprov'];
             $obs          = $_SESSION['obs'];
         }
-        elseif ($_SESSION['docPrint'] == 'CÓPIA DO ALVARÁ DE CONSTRUÇÃO')
+        elseif ($_SESSION['docPrint'] == 'CÓPIA DE PROJETO')
         {
             $projeto  = $_SESSION['projeto'];
             $alvara   = $_SESSION['alvNum'];

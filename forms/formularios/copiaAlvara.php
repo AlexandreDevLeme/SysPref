@@ -25,7 +25,7 @@ echo "
                 <table>
                     <tr>
                         <td id='t1'><a href='../cadgeral.php'><img src='../img/btn-home.png' width='50px' heigth='60px' alt='logo' class='botaoVoltar'></a></td>
-                        <td id='t2Copia'><h4>PREENCHIMENTO DE CERTIDÃO DE CÓPIA DO ALVARÁ DE CONTRUÇÃO</h4></td>
+                        <td id='t2Copia'><h4>PREENCHIMENTO DE CÓPIA DE PROJETO</h4></td>
                         <td id='t3'><img src='../img/PADRAO_BRASAO.png' width='50px' heigth='60px' alt='logo'></td>
                     </tr>
                 </table>
@@ -140,7 +140,7 @@ echo "
                 <input type='text' id='aproData' name='aproData' value='$data' size='10' maxlength='10' class='form-control r3 position-static' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'>
                 <button type='button' class='btn btn-outline-light' onClick=\"Print_Sub()\">IMPRIMIR</button>
             </div>
-            <input type='text' id='motivo' name='className' value='CÓPIA DO ALVARÁ DE CONSTRUÇÃO' class='motivo'></input>
+            <input type='text' id='motivo' name='className' value='CÓPIA DE PROJETO' class='motivo'></input>
         </div>
     </form>
 ";
