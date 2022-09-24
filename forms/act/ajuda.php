@@ -40,9 +40,9 @@ echo "
                         <td id='separador'></td>
                         <td id='video'>
                             <div id='videoCard' class='card' style='border-radius: 1rem;'>
-                            <a href='#' onclick='window.open(\"../ajuda/video/TUTORIAL 3.mp4\", 400, 600,);'>VIDEO -> Como cadastrar um requerente</a>
+                            <a href='#' onclick='window.open(\"../ajuda/video/TUTORIAL 3.mp4\", 400, 600,);'>VIDEO -> Como cadastrar requerentes</a>
                             <a href='#' onclick='window.open(\"../ajuda/pdf/Como editar um requerente.pdf\", 400, 600,);'>VIDEO -> Como editar um requerente?</a>
-                            <a href='#' onclick='window.open(\"../ajuda/pdf/Como cadastrar um imóvel.pdf\", 400, 600,);'>VIDEO -> Como cadastrar um imóvel?</a>
+                            <a href='#' onclick='window.open(\"../ajuda/pdf/Como cadastrar um imóvel.pdf\", 400, 600,);'>VIDEO -> Como cadastrar imóveis?</a>
                             <a href='#' onclick='window.open(\"../ajuda/pdf/Como editar um imóvel.pdf\", 400, 600,);'>VIDEO -> Como editar um imóvel?</a>
                             <a href='#' onclick='window.open(\"../ajuda/pdf/Como emitir um requerimento.pdf\", 400, 600,);'>VIDEO -> Como emitir um requerimento?</a>
                             </div>
